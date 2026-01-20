@@ -1,0 +1,531 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "S3",
+            "zone_id": 0,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 0 | Sensor 3",
+            "power": "1.23 kW"
+        },
+        {
+            "id": 1,
+            "label": "S3",
+            "zone_id": 3,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 3 | Sensor 3",
+            "power": "1.16 kW"
+        },
+        {
+            "id": 2,
+            "label": "S0",
+            "zone_id": 4,
+            "group": "Anomaly",
+            "val": 35,
+            "detail": "Zone 4 | Sensor 0",
+            "power": "5.04 kW"
+        },
+        {
+            "id": 3,
+            "label": "S1",
+            "zone_id": 2,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 2 | Sensor 1",
+            "power": "1.18 kW"
+        },
+        {
+            "id": 4,
+            "label": "S3",
+            "zone_id": 4,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 4 | Sensor 3",
+            "power": "1.26 kW"
+        },
+        {
+            "id": 5,
+            "label": "S4",
+            "zone_id": 4,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 4 | Sensor 4",
+            "power": "1.04 kW"
+        },
+        {
+            "id": 6,
+            "label": "S4",
+            "zone_id": 0,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 0 | Sensor 4",
+            "power": "1.09 kW"
+        },
+        {
+            "id": 7,
+            "label": "S4",
+            "zone_id": 1,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 1 | Sensor 4",
+            "power": "1.19 kW"
+        },
+        {
+            "id": 8,
+            "label": "S2",
+            "zone_id": 4,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 4 | Sensor 2",
+            "power": "1.21 kW"
+        },
+        {
+            "id": 9,
+            "label": "S2",
+            "zone_id": 1,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 1 | Sensor 2",
+            "power": "1.17 kW"
+        },
+        {
+            "id": 10,
+            "label": "S0",
+            "zone_id": 3,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 3 | Sensor 0",
+            "power": "1.06 kW"
+        },
+        {
+            "id": 11,
+            "label": "S0",
+            "zone_id": 2,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 2 | Sensor 0",
+            "power": "1.07 kW"
+        },
+        {
+            "id": 12,
+            "label": "S3",
+            "zone_id": 1,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 1 | Sensor 3",
+            "power": "1.17 kW"
+        },
+        {
+            "id": 13,
+            "label": "S4",
+            "zone_id": 3,
+            "group": "Anomaly",
+            "val": 35,
+            "detail": "Zone 3 | Sensor 4",
+            "power": "5.79 kW"
+        },
+        {
+            "id": 14,
+            "label": "S2",
+            "zone_id": 3,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 3 | Sensor 2",
+            "power": "1.20 kW"
+        },
+        {
+            "id": 15,
+            "label": "S1",
+            "zone_id": 1,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 1 | Sensor 1",
+            "power": "1.22 kW"
+        },
+        {
+            "id": 16,
+            "label": "S4",
+            "zone_id": 2,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 2 | Sensor 4",
+            "power": "1.23 kW"
+        },
+        {
+            "id": 17,
+            "label": "S0",
+            "zone_id": 1,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 1 | Sensor 0",
+            "power": "1.04 kW"
+        },
+        {
+            "id": 18,
+            "label": "S2",
+            "zone_id": 2,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 2 | Sensor 2",
+            "power": "1.07 kW"
+        },
+        {
+            "id": 19,
+            "label": "S2",
+            "zone_id": 0,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 0 | Sensor 2",
+            "power": "1.17 kW"
+        },
+        {
+            "id": 20,
+            "label": "S1",
+            "zone_id": 0,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 0 | Sensor 1",
+            "power": "1.07 kW"
+        },
+        {
+            "id": 21,
+            "label": "S3",
+            "zone_id": 2,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 2 | Sensor 3",
+            "power": "1.18 kW"
+        },
+        {
+            "id": 22,
+            "label": "S1",
+            "zone_id": 3,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 3 | Sensor 1",
+            "power": "1.11 kW"
+        },
+        {
+            "id": 23,
+            "label": "S1",
+            "zone_id": 4,
+            "group": "Normal",
+            "val": 20,
+            "detail": "Zone 4 | Sensor 1",
+            "power": "1.10 kW"
+        },
+        {
+            "id": 24,
+            "label": "S0",
+            "zone_id": 0,
+            "group": "Anomaly",
+            "val": 35,
+            "detail": "Zone 0 | Sensor 0",
+            "power": "4.85 kW"
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 6,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 0,
+            "target": 19,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 0,
+            "target": 20,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 0,
+            "target": 24,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 6,
+            "target": 19,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 6,
+            "target": 20,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 6,
+            "target": 24,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 19,
+            "target": 20,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 19,
+            "target": 24,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 20,
+            "target": 24,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 1,
+            "target": 10,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 1,
+            "target": 13,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 1,
+            "target": 14,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 1,
+            "target": 22,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 10,
+            "target": 13,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 10,
+            "target": 14,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 10,
+            "target": 22,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 13,
+            "target": 14,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 13,
+            "target": 22,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 14,
+            "target": 22,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 2,
+            "target": 4,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 2,
+            "target": 5,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 2,
+            "target": 8,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 2,
+            "target": 23,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 4,
+            "target": 5,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 4,
+            "target": 8,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 4,
+            "target": 23,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 5,
+            "target": 8,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 5,
+            "target": 23,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 8,
+            "target": 23,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 3,
+            "target": 11,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 3,
+            "target": 16,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 3,
+            "target": 18,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 3,
+            "target": 21,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 11,
+            "target": 16,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 11,
+            "target": 18,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 11,
+            "target": 21,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 16,
+            "target": 18,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 16,
+            "target": 21,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 18,
+            "target": 21,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 7,
+            "target": 9,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 7,
+            "target": 12,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 7,
+            "target": 15,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 7,
+            "target": 17,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 9,
+            "target": 12,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 9,
+            "target": 15,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 9,
+            "target": 17,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 12,
+            "target": 15,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 12,
+            "target": 17,
+            "color": "#475569",
+            "info": "Zone Link"
+        },
+        {
+            "source": 15,
+            "target": 17,
+            "color": "#475569",
+            "info": "Zone Link"
+        }
+    ]
+}

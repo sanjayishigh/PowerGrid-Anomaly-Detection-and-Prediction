@@ -1,0 +1,4 @@
+git status# ...But explicitly ALLOW these file types:
+!data/.gitkeep
+!data/*.csv
+!data/*.json

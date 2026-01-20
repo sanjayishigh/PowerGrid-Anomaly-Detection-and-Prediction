@@ -6,3 +6,14 @@ env/
 
 # --- Jupyter Notebook Checkpoints ---
 .ipynb_checkpoints/
+
+# 1. Ignore everything inside data by default
+data/*
+
+# 2. IMPORTANT: Allow all subfolders recursively (so Git actually looks inside)
+!data/**/
+
+# 3. Whitelist your specific file types anywhere in those folders
+!data/**/*.json
+!data/**/*.csv
+!data/**/*.gitkeep

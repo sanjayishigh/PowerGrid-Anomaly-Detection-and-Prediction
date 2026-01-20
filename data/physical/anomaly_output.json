@@ -1,0 +1,2822 @@
+[
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 223.27484325054013,
+        "current": 4.985898498411425,
+        "power": 1.1132257056959145,
+        "timestamp": "2024-05-16 21:36:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.32
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 183.9153156898749,
+        "current": 6.521427965037024,
+        "power": 1.5637622876526802,
+        "timestamp": "2024-05-18 19:47:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.68
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 226.9348069001618,
+        "current": 5.208092183436559,
+        "power": 1.1818973939664177,
+        "timestamp": "2024-05-13 09:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.14
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 232.98131556736303,
+        "current": 5.914046347850621,
+        "power": 1.3778622984485964,
+        "timestamp": "2024-05-16 08:17:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.27
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 162.39712475641625,
+        "current": 5.607032959110933,
+        "power": 1.2949398124739764,
+        "timestamp": "2024-05-16 17:56:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.57
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 221.36807553988783,
+        "current": 5.144434070200213,
+        "power": 1.1388134698620531,
+        "timestamp": "2024-05-17 18:44:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.76
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 279.5894870498814,
+        "current": 4.693142436885228,
+        "power": 1.3121532865807717,
+        "timestamp": "2024-05-13 15:17:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 3.24
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 235.9616743856119,
+        "current": 4.3766459739623045,
+        "power": 1.0327207122091924,
+        "timestamp": "2024-05-13 11:41:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 229.2693008573268,
+        "current": 4.862664877263436,
+        "power": 1.1148597767136668,
+        "timestamp": "2024-05-18 10:03:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.21
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 234.9376871146188,
+        "current": 4.517384941278149,
+        "power": 1.0613039699102962,
+        "timestamp": "2024-05-14 11:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 161.69370315458704,
+        "current": 4.089781893209791,
+        "power": 0.9196397817757976,
+        "timestamp": "2024-05-18 09:22:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.44
+    },
+    {
+        "sensor": 2,
+        "zone": 2,
+        "voltage": 305.9866627695107,
+        "current": 3.9798796246577273,
+        "power": 0.9435508386625971,
+        "timestamp": "2024-05-16 06:44:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.0
+    },
+    {
+        "sensor": 1,
+        "zone": 4,
+        "voltage": 236.49503887691864,
+        "current": 6.864518438775065,
+        "power": 1.6234245550494335,
+        "timestamp": "2024-05-13 19:24:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.18
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 226.81149564102,
+        "current": 6.288445892681903,
+        "power": 1.4262918181768116,
+        "timestamp": "2024-05-14 01:19:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.15
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 279.1730864013487,
+        "current": 3.911707057101432,
+        "power": 0.873836780220119,
+        "timestamp": "2024-05-16 05:10:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.13
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 225.9727964886956,
+        "current": 4.315306596784917,
+        "power": 0.9751418993816034,
+        "timestamp": "2024-05-17 08:30:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.44
+    },
+    {
+        "sensor": 4,
+        "zone": 1,
+        "voltage": 230.0645627911441,
+        "current": 4.374842474547273,
+        "power": 1.0064962211868451,
+        "timestamp": "2024-05-14 08:08:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.4
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 167.9559266947822,
+        "current": 4.679206528612578,
+        "power": 1.0693839580405575,
+        "timestamp": "2024-05-19 08:37:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.32
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 221.84971160430428,
+        "current": 4.057882267757614,
+        "power": 0.9002400108262468,
+        "timestamp": "2024-05-19 20:46:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 289.89201288407395,
+        "current": 4.9692495716733,
+        "power": 1.136379001834979,
+        "timestamp": "2024-05-14 17:39:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 5.68
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 228.9334580151097,
+        "current": 7.091721519256913,
+        "power": 1.6235323306836522,
+        "timestamp": "2024-05-15 16:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.55
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 230.05748147668828,
+        "current": 4.946444877805928,
+        "power": 1.137966650851297,
+        "timestamp": "2024-05-17 08:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.26
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 172.39183085316913,
+        "current": 5.696127886471537,
+        "power": 1.3180965207366475,
+        "timestamp": "2024-05-14 08:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.38
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 230.6514167000961,
+        "current": 4.857840894357329,
+        "power": 1.12046788438718,
+        "timestamp": "2024-05-19 14:17:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 231.93880747685336,
+        "current": 7.274255204982838,
+        "power": 1.6871820775260131,
+        "timestamp": "2024-05-19 20:44:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.73
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 230.60629603458028,
+        "current": 6.556397222160845,
+        "power": 1.5119464787339236,
+        "timestamp": "2024-05-13 09:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.47
+    },
+    {
+        "sensor": 1,
+        "zone": 1,
+        "voltage": 221.6960605058077,
+        "current": 4.78335413348572,
+        "power": 1.0604507673979555,
+        "timestamp": "2024-05-13 12:13:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.08
+    },
+    {
+        "sensor": 0,
+        "zone": 0,
+        "voltage": 220.978594065574,
+        "current": 5.42403166561543,
+        "power": 1.1985948916348512,
+        "timestamp": "2024-05-14 07:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 230.56343826773085,
+        "current": 4.605950315760256,
+        "power": 1.061963741292025,
+        "timestamp": "2024-05-14 13:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.14
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 169.3541502725153,
+        "current": 5.397371270856319,
+        "power": 1.2380463129233417,
+        "timestamp": "2024-05-19 16:06:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.2
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 307.2616234253725,
+        "current": 5.774286117594604,
+        "power": 1.379422643773038,
+        "timestamp": "2024-05-15 18:18:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.68
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 173.10521304205034,
+        "current": 5.57962496361382,
+        "power": 1.2713512477256834,
+        "timestamp": "2024-05-18 02:16:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.57
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 167.94621708728192,
+        "current": 5.567046592736657,
+        "power": 1.2227390308044472,
+        "timestamp": "2024-05-16 12:41:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.02
+    },
+    {
+        "sensor": 1,
+        "zone": 1,
+        "voltage": 217.6076994847733,
+        "current": 6.267816954833744,
+        "power": 1.363925228333028,
+        "timestamp": "2024-05-16 07:39:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.21
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 169.45527242770623,
+        "current": 5.585242680273766,
+        "power": 0.9464488199606432,
+        "timestamp": "2024-05-16 11:13:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.09
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 230.4918891806296,
+        "current": 4.3495205610783,
+        "power": 1.0025292111529291,
+        "timestamp": "2024-05-19 14:02:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.19
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 235.8487123166157,
+        "current": 4.954057455462166,
+        "power": 1.1684080716132816,
+        "timestamp": "2024-05-13 23:18:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 230.7787801020232,
+        "current": 3.622477944591203,
+        "power": 0.8359910409992424,
+        "timestamp": "2024-05-17 20:09:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.55
+    },
+    {
+        "sensor": 2,
+        "zone": 2,
+        "voltage": 151.57620528099446,
+        "current": 4.608517994349529,
+        "power": 0.8535595481680128,
+        "timestamp": "2024-05-19 01:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.77
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 237.220279387952,
+        "current": 3.9931648832887854,
+        "power": 0.9472596892559244,
+        "timestamp": "2024-05-16 05:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.4
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 229.203786800008,
+        "current": 5.408108314330051,
+        "power": 1.2395589050690554,
+        "timestamp": "2024-05-17 20:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 172.50287179687092,
+        "current": 5.65987165194264,
+        "power": 1.2591060083806682,
+        "timestamp": "2024-05-18 11:14:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.0
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 224.93173319092065,
+        "current": 4.3092776779459365,
+        "power": 0.9692932969013254,
+        "timestamp": "2024-05-17 19:37:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.45
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 271.2926877621655,
+        "current": 5.57238050789486,
+        "power": 1.2920381202811122,
+        "timestamp": "2024-05-15 01:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.44
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 225.4579563443692,
+        "current": 3.801586810209516,
+        "power": 0.8570979930955465,
+        "timestamp": "2024-05-19 05:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.57
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 179.1235695806082,
+        "current": 4.465193825943798,
+        "power": 1.0633472386696663,
+        "timestamp": "2024-05-16 08:19:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.82
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 216.91106843881275,
+        "current": 3.0727539936516832,
+        "power": 0.6665143518126154,
+        "timestamp": "2024-05-18 20:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.83
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 272.5458157021149,
+        "current": 4.733901650164615,
+        "power": 1.0762382157519397,
+        "timestamp": "2024-05-13 03:09:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.93
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 229.00271243129228,
+        "current": 4.134721617637577,
+        "power": 0.9468624655873058,
+        "timestamp": "2024-05-18 19:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.23
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 227.1953768765986,
+        "current": 3.894515545906768,
+        "power": 0.8848159272040602,
+        "timestamp": "2024-05-13 11:45:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.6
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 283.9592366740708,
+        "current": 3.2079338050208337,
+        "power": 0.9109224345746634,
+        "timestamp": "2024-05-18 02:09:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 5.34
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 228.0358013247929,
+        "current": 6.014573031929632,
+        "power": 1.3715379809625632,
+        "timestamp": "2024-05-14 11:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.46
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 190.9001777318106,
+        "current": 4.693919312118751,
+        "power": 1.082257964364863,
+        "timestamp": "2024-05-14 05:43:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.88
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 221.97897435480635,
+        "current": 4.017398181150468,
+        "power": 0.8917779278266453,
+        "timestamp": "2024-05-19 02:33:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.31
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 294.976614704758,
+        "current": 5.233560638939887,
+        "power": 1.2303789120806214,
+        "timestamp": "2024-05-18 11:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 5.84
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 172.1833863409268,
+        "current": 4.079900549954955,
+        "power": 0.967368617763502,
+        "timestamp": "2024-05-19 01:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.22
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 230.8577918027268,
+        "current": 5.101722270522922,
+        "power": 1.1777723377637153,
+        "timestamp": "2024-05-13 22:51:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.07
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 230.56343826773085,
+        "current": 4.605950315760256,
+        "power": 1.061963741292025,
+        "timestamp": "2024-05-14 13:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.14
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 189.2521261986508,
+        "current": 4.128382448499121,
+        "power": 0.9226147357218248,
+        "timestamp": "2024-05-16 21:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.51
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 234.20532127558752,
+        "current": 5.344656400173534,
+        "power": 1.2517469693102676,
+        "timestamp": "2024-05-13 06:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.12
+    },
+    {
+        "sensor": 4,
+        "zone": 1,
+        "voltage": 285.5164858541756,
+        "current": 4.1016341900502935,
+        "power": 0.9549394930405584,
+        "timestamp": "2024-05-16 06:22:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 5.08
+    },
+    {
+        "sensor": 2,
+        "zone": 2,
+        "voltage": 227.3643091522823,
+        "current": 4.636873872112301,
+        "power": 1.0542596245590814,
+        "timestamp": "2024-05-14 10:26:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.23
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 233.8196563874376,
+        "current": 6.6108321985144896,
+        "power": 1.5457425130916664,
+        "timestamp": "2024-05-19 17:59:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.19
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 228.93969035863307,
+        "current": 6.714977333744509,
+        "power": 1.5373248315527073,
+        "timestamp": "2024-05-15 22:15:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.53
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 231.9603213893698,
+        "current": 4.274559012405001,
+        "power": 0.991528082315291,
+        "timestamp": "2024-05-19 03:55:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.15
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 228.9944995393529,
+        "current": 6.028536531336987,
+        "power": 1.38050170594822,
+        "timestamp": "2024-05-15 17:01:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.26
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 269.2371121225364,
+        "current": 4.854662036824353,
+        "power": 1.113388272297663,
+        "timestamp": "2024-05-15 10:15:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.02
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 227.86650776237684,
+        "current": 6.98651435725575,
+        "power": 1.5919926280195746,
+        "timestamp": "2024-05-16 08:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.2
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 295.4114729150748,
+        "current": 6.2902728120731535,
+        "power": 1.4940287349551875,
+        "timestamp": "2024-05-16 18:49:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.8
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 296.162898974455,
+        "current": 4.358410292578107,
+        "power": 1.0132739741484542,
+        "timestamp": "2024-05-15 16:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.81
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 232.2847390954983,
+        "current": 5.751143555821409,
+        "power": 1.3359028803647326,
+        "timestamp": "2024-05-18 13:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.07
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 241.94259665933663,
+        "current": 4.137777316191752,
+        "power": 1.0011045882775331,
+        "timestamp": "2024-05-16 22:13:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 300.1808059247894,
+        "current": 5.398400095861096,
+        "power": 1.260139516014611,
+        "timestamp": "2024-05-14 05:44:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.5
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 176.41123860973866,
+        "current": 4.802125341510155,
+        "power": 1.1330041863257143,
+        "timestamp": "2024-05-19 11:15:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.15
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 236.1649364908401,
+        "current": 5.104838218473774,
+        "power": 1.205583793661872,
+        "timestamp": "2024-05-17 01:46:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.07
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 230.6048800898453,
+        "current": 3.669738410004129,
+        "power": 0.8462595860001018,
+        "timestamp": "2024-05-14 00:10:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.4
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 180.1425849491231,
+        "current": 6.815528433783167,
+        "power": 1.227766909855948,
+        "timestamp": "2024-05-19 18:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.68
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 173.10521304205034,
+        "current": 5.57962496361382,
+        "power": 1.2713512477256834,
+        "timestamp": "2024-05-18 02:16:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.57
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 268.20163913888376,
+        "current": 2.6296139468262263,
+        "power": 0.5920072150537768,
+        "timestamp": "2024-05-17 08:47:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.07
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 232.30487508393853,
+        "current": 4.820214511879407,
+        "power": 1.1197593300599336,
+        "timestamp": "2024-05-18 04:26:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.28
+    },
+    {
+        "sensor": 0,
+        "zone": 0,
+        "voltage": 229.9654066919961,
+        "current": 5.778341416845218,
+        "power": 1.3288186339300154,
+        "timestamp": "2024-05-18 03:13:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.13
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 183.74870402677644,
+        "current": 5.864373321500372,
+        "power": 1.3953972875286758,
+        "timestamp": "2024-05-14 17:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.51
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 228.8533130750893,
+        "current": 6.084690151840047,
+        "power": 1.392501500283963,
+        "timestamp": "2024-05-15 21:47:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.39
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 235.8487123166157,
+        "current": 4.954057455462166,
+        "power": 1.1684080716132816,
+        "timestamp": "2024-05-13 23:18:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 266.9468186265519,
+        "current": 5.098364654984839,
+        "power": 1.1497367183143334,
+        "timestamp": "2024-05-19 12:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.9
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 187.45622000006944,
+        "current": 4.708581980969635,
+        "power": 1.0551097564012055,
+        "timestamp": "2024-05-13 15:52:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.98
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 231.4953696265672,
+        "current": 4.131136697777977,
+        "power": 0.9563390168299888,
+        "timestamp": "2024-05-18 01:37:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.77
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 225.1797573194044,
+        "current": 5.189177016187366,
+        "power": 1.1684976211925018,
+        "timestamp": "2024-05-16 20:23:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.08
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 218.62520127428223,
+        "current": 3.5125187055064364,
+        "power": 0.7679251089710261,
+        "timestamp": "2024-05-16 00:50:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.71
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 274.8979276135415,
+        "current": 6.799656752704595,
+        "power": 1.5969228783767275,
+        "timestamp": "2024-05-18 10:12:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.52
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 230.7345820994671,
+        "current": 5.631342946687764,
+        "power": 1.299345561462783,
+        "timestamp": "2024-05-14 15:49:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.02
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 285.52322311304147,
+        "current": 4.558075200113555,
+        "power": 1.3014363223280436,
+        "timestamp": "2024-05-17 17:22:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.54
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 234.03543650486145,
+        "current": 5.3826388319988325,
+        "power": 1.2597282285948643,
+        "timestamp": "2024-05-18 04:58:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.08
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 261.43046139720497,
+        "current": 3.5577478301722243,
+        "power": 0.8084860700260003,
+        "timestamp": "2024-05-18 01:09:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.27
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 224.32944029960208,
+        "current": 5.22640727963652,
+        "power": 1.1724370198186265,
+        "timestamp": "2024-05-18 10:21:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.22
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 226.11476587556905,
+        "current": 5.251258542004623,
+        "power": 1.1873870957774575,
+        "timestamp": "2024-05-13 20:03:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.25
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 165.08063503417367,
+        "current": 4.317226685430302,
+        "power": 0.9865151742971172,
+        "timestamp": "2024-05-18 09:04:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.8
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 284.60815795145805,
+        "current": 4.8220289662051,
+        "power": 1.0982608572495247,
+        "timestamp": "2024-05-16 22:04:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.53
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 228.7798671342448,
+        "current": 4.817916068653834,
+        "power": 1.1022421980505672,
+        "timestamp": "2024-05-14 02:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.04
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 274.7414807903149,
+        "current": 4.430649540433673,
+        "power": 0.9985015098107785,
+        "timestamp": "2024-05-15 22:03:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.46
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 227.14703768529688,
+        "current": 5.282912079902574,
+        "power": 1.19999782930174,
+        "timestamp": "2024-05-17 21:46:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.05
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 233.96310226365543,
+        "current": 4.45018603974531,
+        "power": 1.0411793315092237,
+        "timestamp": "2024-05-15 20:55:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.05
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 227.1625132670709,
+        "current": 5.97431710251891,
+        "power": 1.3571408880626408,
+        "timestamp": "2024-05-14 23:38:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.2
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 237.62056937821995,
+        "current": 7.720512727475527,
+        "power": 1.8345526301945287,
+        "timestamp": "2024-05-14 12:23:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.76
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 232.1394481753813,
+        "current": 4.776928772805714,
+        "power": 1.1089136092922205,
+        "timestamp": "2024-05-14 00:06:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 167.78455263324068,
+        "current": 5.0975697925300425,
+        "power": 1.197966228578953,
+        "timestamp": "2024-05-14 07:34:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.86
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 200.705273431142,
+        "current": 4.073171453157876,
+        "power": 0.9659373475325496,
+        "timestamp": "2024-05-19 04:16:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.38
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 234.0354558954677,
+        "current": 4.528180552631972,
+        "power": 1.0597548000122143,
+        "timestamp": "2024-05-19 21:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 204.8813530182315,
+        "current": 4.915571851582683,
+        "power": 1.1857124582745695,
+        "timestamp": "2024-05-18 00:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.33
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 224.2877563323231,
+        "current": 4.346456357529887,
+        "power": 0.9748569444267398,
+        "timestamp": "2024-05-14 13:05:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 234.47400502247675,
+        "current": 4.516150869209726,
+        "power": 1.058919981589344,
+        "timestamp": "2024-05-14 22:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.21
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 234.5167212954237,
+        "current": 5.112414149631074,
+        "power": 1.1989466042758112,
+        "timestamp": "2024-05-14 04:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.02
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 226.7277278696997,
+        "current": 6.443408181953407,
+        "power": 1.460899296831329,
+        "timestamp": "2024-05-19 19:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.3
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 298.82990702164875,
+        "current": 5.092273728320424,
+        "power": 1.239577415222634,
+        "timestamp": "2024-05-18 13:30:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.98
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 281.00981245281537,
+        "current": 3.968708857163149,
+        "power": 0.8993338639980893,
+        "timestamp": "2024-05-16 22:11:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.54
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 223.5995180917344,
+        "current": 4.09408162655925,
+        "power": 0.9154346787268725,
+        "timestamp": "2024-05-18 03:58:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.05
+    },
+    {
+        "sensor": 2,
+        "zone": 2,
+        "voltage": 283.8596004600707,
+        "current": 4.954889638155218,
+        "power": 1.1652517893534051,
+        "timestamp": "2024-05-18 19:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.79
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 229.69586749273623,
+        "current": 5.53089092114802,
+        "power": 1.2704227881407932,
+        "timestamp": "2024-05-16 06:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 274.02068681783066,
+        "current": 3.777700016191909,
+        "power": 0.8441366328095149,
+        "timestamp": "2024-05-17 07:10:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.22
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 163.7523086665108,
+        "current": 4.852362411012536,
+        "power": 1.1184900825136572,
+        "timestamp": "2024-05-15 12:38:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.54
+    },
+    {
+        "sensor": 0,
+        "zone": 0,
+        "voltage": 228.3496964313711,
+        "current": 5.420434796580822,
+        "power": 1.2377546403252713,
+        "timestamp": "2024-05-19 04:11:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.15
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 232.6790793997544,
+        "current": 4.294665608206766,
+        "power": 0.9992788400473364,
+        "timestamp": "2024-05-18 13:16:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.43
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 234.0630579918076,
+        "current": 5.0900466428436815,
+        "power": 1.191391882544926,
+        "timestamp": "2024-05-17 22:58:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 286.06421075437686,
+        "current": 4.960747337177965,
+        "power": 1.165950578744687,
+        "timestamp": "2024-05-13 09:14:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.81
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 229.3281990154104,
+        "current": 4.403946558346873,
+        "power": 1.0099491327858034,
+        "timestamp": "2024-05-14 01:59:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.61
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 227.17789716030103,
+        "current": 7.399070646986312,
+        "power": 1.6809053105228586,
+        "timestamp": "2024-05-17 07:49:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.04
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 227.73320932290216,
+        "current": 5.359177084112569,
+        "power": 1.220462596694708,
+        "timestamp": "2024-05-16 06:01:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 292.69710449174306,
+        "current": 6.383092575704543,
+        "power": 1.445472752593366,
+        "timestamp": "2024-05-19 14:26:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.1
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 278.96077072138814,
+        "current": 3.619280716195285,
+        "power": 0.831284106069899,
+        "timestamp": "2024-05-16 23:14:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.3
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 167.94621708728192,
+        "current": 5.567046592736657,
+        "power": 1.2227390308044472,
+        "timestamp": "2024-05-16 12:41:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.02
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 228.7436372180805,
+        "current": 5.651641102998684,
+        "power": 1.2927769421511237,
+        "timestamp": "2024-05-19 00:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.46
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 172.5150411336187,
+        "current": 6.263312786123533,
+        "power": 1.0805156629308212,
+        "timestamp": "2024-05-13 02:24:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.14
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 296.162898974455,
+        "current": 4.358410292578107,
+        "power": 1.0132739741484542,
+        "timestamp": "2024-05-15 16:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.81
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 230.7282535857358,
+        "current": 6.644280680470149,
+        "power": 1.533023277738322,
+        "timestamp": "2024-05-15 09:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.39
+    },
+    {
+        "sensor": 2,
+        "zone": 2,
+        "voltage": 223.7499979355904,
+        "current": 6.30631481302912,
+        "power": 1.411037926396449,
+        "timestamp": "2024-05-13 09:10:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.19
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 162.1541017730722,
+        "current": 3.843029018223723,
+        "power": 0.8819917054087537,
+        "timestamp": "2024-05-13 03:30:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.25
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 229.09011183528577,
+        "current": 5.327769678057109,
+        "power": 1.2205393513787477,
+        "timestamp": "2024-05-15 02:30:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 0,
+        "zone": 0,
+        "voltage": 220.978594065574,
+        "current": 5.42403166561543,
+        "power": 1.1985948916348512,
+        "timestamp": "2024-05-14 07:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 1,
+        "zone": 4,
+        "voltage": 296.1057804058513,
+        "current": 3.831901173782384,
+        "power": 0.8812865739127769,
+        "timestamp": "2024-05-15 02:23:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.93
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 177.23349653582127,
+        "current": 3.98439510540826,
+        "power": 0.9246735641642104,
+        "timestamp": "2024-05-19 10:39:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.97
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 287.2328571359929,
+        "current": 5.478579524786728,
+        "power": 1.2596208824712554,
+        "timestamp": "2024-05-15 07:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.55
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 224.50385052865832,
+        "current": 4.830688755955428,
+        "power": 1.0845082264174877,
+        "timestamp": "2024-05-15 00:43:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.19
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 181.81064797431148,
+        "current": 4.857488490798027,
+        "power": 1.1026494867500605,
+        "timestamp": "2024-05-17 22:20:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.63
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 236.1649364908401,
+        "current": 5.104838218473774,
+        "power": 1.205583793661872,
+        "timestamp": "2024-05-17 01:46:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.07
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 231.5362149540122,
+        "current": 4.527672964756638,
+        "power": 1.0483202608093627,
+        "timestamp": "2024-05-17 09:49:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 195.1764768252058,
+        "current": 4.140009662779975,
+        "power": 1.1381204791191035,
+        "timestamp": "2024-05-18 04:09:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.32
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 232.53852076880565,
+        "current": 5.116722687593069,
+        "power": 1.1898351249570798,
+        "timestamp": "2024-05-15 18:05:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.38
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 235.4216075721138,
+        "current": 4.482247324155896,
+        "power": 1.0552178705885864,
+        "timestamp": "2024-05-19 21:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.33
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 185.8430805517602,
+        "current": 4.440408980085703,
+        "power": 1.0104342405363118,
+        "timestamp": "2024-05-18 18:33:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.05
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 225.5026137656156,
+        "current": 3.731909055484,
+        "power": 0.8415552463472119,
+        "timestamp": "2024-05-16 10:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.55
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 261.43046139720497,
+        "current": 3.5577478301722243,
+        "power": 0.8084860700260003,
+        "timestamp": "2024-05-18 01:09:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.27
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 230.16833324897183,
+        "current": 6.913906218464176,
+        "power": 1.591362270543601,
+        "timestamp": "2024-05-14 20:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.47
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 195.9045121846538,
+        "current": 5.263872922823005,
+        "power": 1.2222389304353098,
+        "timestamp": "2024-05-14 04:13:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.95
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 218.20152546883875,
+        "current": 3.789287549470101,
+        "power": 0.8268283237344539,
+        "timestamp": "2024-05-14 10:23:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.68
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 225.30924385861377,
+        "current": 4.353608396821872,
+        "power": 0.9809082159444475,
+        "timestamp": "2024-05-13 02:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 1,
+        "zone": 4,
+        "voltage": 237.3381736881336,
+        "current": 7.77090619955583,
+        "power": 1.844332685304376,
+        "timestamp": "2024-05-17 07:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.78
+    },
+    {
+        "sensor": 1,
+        "zone": 1,
+        "voltage": 180.703850108351,
+        "current": 6.095892713654383,
+        "power": 1.4441516957989209,
+        "timestamp": "2024-05-19 06:11:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.55
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 214.8494717253863,
+        "current": 3.8047357356558025,
+        "power": 0.8174454628603482,
+        "timestamp": "2024-05-19 11:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.38
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 278.2641639313567,
+        "current": 5.682595699778108,
+        "power": 1.292937285519833,
+        "timestamp": "2024-05-13 19:55:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.23
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 269.15828135512135,
+        "current": 5.251511202653661,
+        "power": 1.196137543652328,
+        "timestamp": "2024-05-19 19:58:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.39
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 228.19830959730817,
+        "current": 3.892035316661047,
+        "power": 0.8881558801550749,
+        "timestamp": "2024-05-13 16:26:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.21
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 231.22342320175025,
+        "current": 3.671208141442503,
+        "power": 0.8488693137504707,
+        "timestamp": "2024-05-16 00:31:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.59
+    },
+    {
+        "sensor": 4,
+        "zone": 1,
+        "voltage": 238.1249031070131,
+        "current": 4.044054875606116,
+        "power": 0.96299017541315,
+        "timestamp": "2024-05-16 01:06:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.23
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 284.002480826941,
+        "current": 4.552586002993949,
+        "power": 1.0491914724123066,
+        "timestamp": "2024-05-14 06:15:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.7
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 241.3758911694021,
+        "current": 5.145142755580022,
+        "power": 1.241913417821921,
+        "timestamp": "2024-05-13 11:38:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.01
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 232.0723725065633,
+        "current": 5.942033765245768,
+        "power": 1.3789818734146932,
+        "timestamp": "2024-05-13 11:44:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.41
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 193.6200842700208,
+        "current": 5.415283609492237,
+        "power": 1.2386019263315942,
+        "timestamp": "2024-05-19 15:05:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.28
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 229.83842510759845,
+        "current": 4.106333937644326,
+        "power": 0.9437933251940552,
+        "timestamp": "2024-05-15 11:23:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.24
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 231.5395260342393,
+        "current": 6.160303405785816,
+        "power": 1.426353730802758,
+        "timestamp": "2024-05-17 20:58:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.3
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 235.2663669114997,
+        "current": 5.242117968482396,
+        "power": 1.233294049366345,
+        "timestamp": "2024-05-13 09:45:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.18
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 228.7798671342448,
+        "current": 4.817916068653834,
+        "power": 1.1022421980505672,
+        "timestamp": "2024-05-14 02:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.04
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 229.5479865910145,
+        "current": 6.505453950945014,
+        "power": 1.4933138562999886,
+        "timestamp": "2024-05-13 16:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.26
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 176.41123860973866,
+        "current": 4.802125341510155,
+        "power": 1.1330041863257143,
+        "timestamp": "2024-05-19 11:15:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.15
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 172.39183085316913,
+        "current": 5.696127886471537,
+        "power": 1.3180965207366475,
+        "timestamp": "2024-05-14 08:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.38
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 230.3013764609275,
+        "current": 4.545886976027962,
+        "power": 1.046924027815043,
+        "timestamp": "2024-05-16 05:40:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.33
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 219.68129575504,
+        "current": 4.368930008885576,
+        "power": 0.8023982604139243,
+        "timestamp": "2024-05-15 13:56:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.69
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 236.6671210484908,
+        "current": 5.149583885177282,
+        "power": 1.2187371927026094,
+        "timestamp": "2024-05-18 09:58:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.27
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 219.68129575504,
+        "current": 4.368930008885576,
+        "power": 0.8023982604139243,
+        "timestamp": "2024-05-15 13:56:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.69
+    },
+    {
+        "sensor": 1,
+        "zone": 4,
+        "voltage": 235.82999022756184,
+        "current": 3.801883628580912,
+        "power": 0.896598178974564,
+        "timestamp": "2024-05-16 07:50:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.51
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 234.90801129483413,
+        "current": 5.67094798729489,
+        "power": 1.332151113851885,
+        "timestamp": "2024-05-16 15:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.33
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 230.48064598204715,
+        "current": 5.48118436924444,
+        "power": 1.2633069141701585,
+        "timestamp": "2024-05-14 16:32:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.26
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 233.3716949896667,
+        "current": 4.249366629853728,
+        "power": 0.991681893041492,
+        "timestamp": "2024-05-17 10:49:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.26
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 225.2553519907273,
+        "current": 5.419816838984409,
+        "power": 1.220842749790704,
+        "timestamp": "2024-05-18 04:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 221.84971160430428,
+        "current": 4.057882267757614,
+        "power": 0.9002400108262468,
+        "timestamp": "2024-05-19 20:46:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 225.30924385861377,
+        "current": 4.353608396821872,
+        "power": 0.9809082159444475,
+        "timestamp": "2024-05-13 02:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 231.3118606039189,
+        "current": 4.414165757884801,
+        "power": 1.021048894470441,
+        "timestamp": "2024-05-17 01:08:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.31
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 231.72241234761367,
+        "current": 5.754750136928881,
+        "power": 1.3335045841869204,
+        "timestamp": "2024-05-19 17:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.04
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 230.60629603458028,
+        "current": 6.556397222160845,
+        "power": 1.5119464787339236,
+        "timestamp": "2024-05-13 09:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.47
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 223.20820249316367,
+        "current": 3.526520774704265,
+        "power": 0.7871483631765379,
+        "timestamp": "2024-05-16 21:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.67
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 229.147795734592,
+        "current": 3.951037452626829,
+        "power": 0.9053715231342552,
+        "timestamp": "2024-05-13 01:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.43
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 174.3250359636276,
+        "current": 2.6613396759955696,
+        "power": 0.4639381347293567,
+        "timestamp": "2024-05-18 08:58:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.7
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 222.039281646462,
+        "current": 5.273509282648404,
+        "power": 1.1709262128752007,
+        "timestamp": "2024-05-15 02:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 223.56141955406136,
+        "current": 5.60507237945,
+        "power": 1.2530779378531025,
+        "timestamp": "2024-05-15 10:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.72
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 232.30487508393853,
+        "current": 4.820214511879407,
+        "power": 1.1197593300599336,
+        "timestamp": "2024-05-18 04:26:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.28
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 226.77182564936447,
+        "current": 5.047347090916926,
+        "power": 1.1445961144932402,
+        "timestamp": "2024-05-17 12:55:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.05
+    },
+    {
+        "sensor": 4,
+        "zone": 1,
+        "voltage": 226.1538196704734,
+        "current": 4.751773153529273,
+        "power": 1.074631648878256,
+        "timestamp": "2024-05-19 12:52:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.18
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 236.9841983906311,
+        "current": 4.536055189402093,
+        "power": 1.074973402916117,
+        "timestamp": "2024-05-17 10:48:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 234.34562001800305,
+        "current": 4.527464089612237,
+        "power": 1.0609913791894234,
+        "timestamp": "2024-05-18 02:31:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.28
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 232.5426504794543,
+        "current": 3.500163142130717,
+        "power": 0.8139372141815719,
+        "timestamp": "2024-05-14 10:27:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.22
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 233.5017493306093,
+        "current": 6.103288431664941,
+        "power": 1.4251285254630348,
+        "timestamp": "2024-05-15 04:31:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 238.3428733680931,
+        "current": 4.6048111678396,
+        "power": 1.0975239250603748,
+        "timestamp": "2024-05-14 15:20:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 224.44534480146007,
+        "current": 3.995539749411804,
+        "power": 0.896780296724672,
+        "timestamp": "2024-05-19 01:37:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.26
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 176.41123860973866,
+        "current": 4.802125341510155,
+        "power": 1.1330041863257143,
+        "timestamp": "2024-05-19 11:15:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.15
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 234.34562001800305,
+        "current": 4.527464089612237,
+        "power": 1.0609913791894234,
+        "timestamp": "2024-05-18 02:31:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.28
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 236.2147797045349,
+        "current": 3.719728242234884,
+        "power": 0.8786547873002502,
+        "timestamp": "2024-05-15 17:52:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.08
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 231.7084358302207,
+        "current": 4.320737973249491,
+        "power": 1.0011514374138777,
+        "timestamp": "2024-05-17 02:54:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.04
+    },
+    {
+        "sensor": 1,
+        "zone": 4,
+        "voltage": 231.2699086497568,
+        "current": 6.419845389384684,
+        "power": 1.4847170567485577,
+        "timestamp": "2024-05-18 13:35:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.39
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 230.7854840101907,
+        "current": 4.806311201825827,
+        "power": 1.109226857016975,
+        "timestamp": "2024-05-15 16:22:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 168.11946010476152,
+        "current": 4.395085536059284,
+        "power": 1.0461631674819962,
+        "timestamp": "2024-05-15 15:11:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 5.22
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 230.98113802461145,
+        "current": 5.315307728564447,
+        "power": 1.2277358280948285,
+        "timestamp": "2024-05-13 14:12:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.52
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 169.2143122424914,
+        "current": 4.488315187227801,
+        "power": 1.0349147664952167,
+        "timestamp": "2024-05-18 02:17:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.68
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 169.3541502725153,
+        "current": 5.397371270856319,
+        "power": 1.2380463129233417,
+        "timestamp": "2024-05-19 16:06:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.2
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 189.2521261986508,
+        "current": 4.128382448499121,
+        "power": 0.9226147357218248,
+        "timestamp": "2024-05-16 21:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.51
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 262.2197037015072,
+        "current": 4.589620879795844,
+        "power": 1.0255853021317,
+        "timestamp": "2024-05-13 04:39:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.67
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 175.43825272219385,
+        "current": 3.938061604153381,
+        "power": 0.906476499878702,
+        "timestamp": "2024-05-19 17:33:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.19
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 230.7854840101907,
+        "current": 4.806311201825827,
+        "power": 1.109226857016975,
+        "timestamp": "2024-05-15 16:22:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 224.2877563323231,
+        "current": 4.346456357529887,
+        "power": 0.9748569444267398,
+        "timestamp": "2024-05-14 13:05:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 182.53658060052348,
+        "current": 5.096155141670158,
+        "power": 1.1967881050041411,
+        "timestamp": "2024-05-13 12:21:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.22
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 339.65905394360016,
+        "current": 5.883604689281087,
+        "power": 1.6102704129967085,
+        "timestamp": "2024-05-17 00:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.8
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 227.7280409181668,
+        "current": 4.63621634095342,
+        "power": 1.055796464598114,
+        "timestamp": "2024-05-18 10:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.33
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 234.10941304128968,
+        "current": 5.701135762023148,
+        "power": 1.3346895469159448,
+        "timestamp": "2024-05-16 04:25:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.01
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 235.46847275107567,
+        "current": 4.302012752455525,
+        "power": 1.0129883725763542,
+        "timestamp": "2024-05-17 17:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.05
+    },
+    {
+        "sensor": 0,
+        "zone": 4,
+        "voltage": 270.71937289021093,
+        "current": 5.807073800367851,
+        "power": 1.3487996525756971,
+        "timestamp": "2024-05-16 15:41:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.21
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 232.26888605142787,
+        "current": 4.789893330831532,
+        "power": 1.1125431882574035,
+        "timestamp": "2024-05-18 05:40:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 296.16138582891193,
+        "current": 5.15676915867601,
+        "power": 1.2495878589067957,
+        "timestamp": "2024-05-15 15:48:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.4
+    },
+    {
+        "sensor": 4,
+        "zone": 1,
+        "voltage": 229.3439822306347,
+        "current": 5.8587730302821495,
+        "power": 1.3436743377503513,
+        "timestamp": "2024-05-14 02:37:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.19
+    },
+    {
+        "sensor": 4,
+        "zone": 2,
+        "voltage": 275.4764257568395,
+        "current": 2.592105002134651,
+        "power": 0.5959918529318077,
+        "timestamp": "2024-05-16 07:55:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.62
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 232.3132668206869,
+        "current": 3.6939200922989928,
+        "power": 0.8581466440165524,
+        "timestamp": "2024-05-18 02:18:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.49
+    },
+    {
+        "sensor": 0,
+        "zone": 2,
+        "voltage": 228.89140614380128,
+        "current": 6.134656609125006,
+        "power": 1.4041701774719866,
+        "timestamp": "2024-05-13 07:36:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.36
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 237.88364597189656,
+        "current": 6.211013375002852,
+        "power": 1.477498506825893,
+        "timestamp": "2024-05-17 08:03:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.61
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 194.79341593162712,
+        "current": 5.064566811445732,
+        "power": 1.189884044645913,
+        "timestamp": "2024-05-13 01:49:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.71
+    },
+    {
+        "sensor": 2,
+        "zone": 2,
+        "voltage": 228.2141325594596,
+        "current": 4.0698284694825,
+        "power": 0.9287923738287416,
+        "timestamp": "2024-05-13 04:33:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 234.9170909415376,
+        "current": 4.888693622927972,
+        "power": 1.1484376844026851,
+        "timestamp": "2024-05-15 01:57:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.13
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 225.9727964886956,
+        "current": 4.315306596784917,
+        "power": 0.9751418993816034,
+        "timestamp": "2024-05-17 08:30:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.44
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 343.89337844803754,
+        "current": 6.293887622860646,
+        "power": 1.7150754139919595,
+        "timestamp": "2024-05-17 20:19:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.84
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 218.33857035968447,
+        "current": 3.78820307769798,
+        "power": 0.827110844216734,
+        "timestamp": "2024-05-18 02:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.67
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 226.53594574522225,
+        "current": 5.342708719080525,
+        "power": 1.2103155725181516,
+        "timestamp": "2024-05-13 01:50:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.07
+    },
+    {
+        "sensor": 4,
+        "zone": 4,
+        "voltage": 220.9738996389133,
+        "current": 5.112555667171656,
+        "power": 1.1297413628959472,
+        "timestamp": "2024-05-15 06:44:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.68
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 169.59302180775956,
+        "current": 6.101442634362607,
+        "power": 1.435244241357419,
+        "timestamp": "2024-05-13 10:36:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.61
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 224.7875670084101,
+        "current": 6.452578215335569,
+        "power": 1.4504593579567513,
+        "timestamp": "2024-05-17 20:17:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.34
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 228.2099574315632,
+        "current": 3.7757015407966734,
+        "power": 0.8616526878994965,
+        "timestamp": "2024-05-18 04:35:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.78
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 226.06074507533785,
+        "current": 5.092631003917412,
+        "power": 1.1512439591393355,
+        "timestamp": "2024-05-19 05:02:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.41
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 235.1376866912448,
+        "current": 4.801692554838924,
+        "power": 1.1290588795473977,
+        "timestamp": "2024-05-18 22:49:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.01
+    },
+    {
+        "sensor": 3,
+        "zone": 2,
+        "voltage": 235.27622883286048,
+        "current": 6.191932964721461,
+        "power": 1.4568146371255388,
+        "timestamp": "2024-05-18 19:02:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.4
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 238.8820996050674,
+        "current": 4.614905424871468,
+        "power": 1.102418297372112,
+        "timestamp": "2024-05-19 01:45:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.35
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 283.5174260598757,
+        "current": 4.175855430111906,
+        "power": 1.183927783143483,
+        "timestamp": "2024-05-13 05:32:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 4.28
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 229.7108012992585,
+        "current": 4.391580005501112,
+        "power": 1.0087933620334626,
+        "timestamp": "2024-05-19 21:39:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.36
+    },
+    {
+        "sensor": 2,
+        "zone": 2,
+        "voltage": 228.2141325594596,
+        "current": 4.0698284694825,
+        "power": 0.9287923738287416,
+        "timestamp": "2024-05-13 04:33:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.09
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 232.0929939313546,
+        "current": 4.777725518716836,
+        "power": 1.1088766198212248,
+        "timestamp": "2024-05-15 06:31:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.07
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 162.955877002082,
+        "current": 6.172528268888341,
+        "power": 1.393483940145135,
+        "timestamp": "2024-05-19 05:38:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 5.96
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 223.25722111102348,
+        "current": 5.943170571368174,
+        "power": 1.3268557463524724,
+        "timestamp": "2024-05-19 20:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.08
+    },
+    {
+        "sensor": 1,
+        "zone": 0,
+        "voltage": 227.68694662048944,
+        "current": 5.12139353452954,
+        "power": 1.1660744563189471,
+        "timestamp": "2024-05-17 21:13:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.5
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 231.9880715528124,
+        "current": 6.657790383674808,
+        "power": 1.5445279519115775,
+        "timestamp": "2024-05-16 05:11:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.48
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 162.85441316693215,
+        "current": 5.499428660974469,
+        "power": 1.242656962505123,
+        "timestamp": "2024-05-15 19:11:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.26
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 232.5426504794543,
+        "current": 3.500163142130717,
+        "power": 0.8139372141815719,
+        "timestamp": "2024-05-14 10:27:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.22
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 285.52322311304147,
+        "current": 4.558075200113555,
+        "power": 1.3014363223280436,
+        "timestamp": "2024-05-17 17:22:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.54
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 231.3318824900014,
+        "current": 6.5012340704824005,
+        "power": 1.503942716032828,
+        "timestamp": "2024-05-18 06:48:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.06
+    },
+    {
+        "sensor": 3,
+        "zone": 0,
+        "voltage": 235.63602212726985,
+        "current": 5.141349719241892,
+        "power": 1.211487196207315,
+        "timestamp": "2024-05-18 18:26:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.37
+    },
+    {
+        "sensor": 4,
+        "zone": 3,
+        "voltage": 231.07882305014,
+        "current": 4.897358075279368,
+        "power": 1.131675740090655,
+        "timestamp": "2024-05-17 03:31:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.15
+    },
+    {
+        "sensor": 1,
+        "zone": 4,
+        "voltage": 237.3381736881336,
+        "current": 7.77090619955583,
+        "power": 1.844332685304376,
+        "timestamp": "2024-05-17 07:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.78
+    },
+    {
+        "sensor": 3,
+        "zone": 4,
+        "voltage": 230.4918891806296,
+        "current": 4.3495205610783,
+        "power": 1.0025292111529291,
+        "timestamp": "2024-05-19 14:02:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.19
+    },
+    {
+        "sensor": 4,
+        "zone": 1,
+        "voltage": 237.36969943423173,
+        "current": 6.368776648873704,
+        "power": 1.5117545989069048,
+        "timestamp": "2024-05-16 06:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.34
+    },
+    {
+        "sensor": 1,
+        "zone": 1,
+        "voltage": 229.43797130248927,
+        "current": 6.52874121197119,
+        "power": 1.497941138833625,
+        "timestamp": "2024-05-19 02:09:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.87
+    },
+    {
+        "sensor": 1,
+        "zone": 1,
+        "voltage": 166.04971113786115,
+        "current": 5.299774469124103,
+        "power": 1.2206412553365986,
+        "timestamp": "2024-05-16 10:39:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.47
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 266.9468186265519,
+        "current": 5.098364654984839,
+        "power": 1.1497367183143334,
+        "timestamp": "2024-05-19 12:29:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.9
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 235.57078625042496,
+        "current": 5.954285360639722,
+        "power": 1.4026556839652944,
+        "timestamp": "2024-05-17 01:16:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.1
+    },
+    {
+        "sensor": 3,
+        "zone": 1,
+        "voltage": 193.01001768947603,
+        "current": 6.142539111342845,
+        "power": 1.3965238906857262,
+        "timestamp": "2024-05-13 07:01:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.49
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 183.1665997786505,
+        "current": 5.16200427031309,
+        "power": 0.9455067702361226,
+        "timestamp": "2024-05-14 01:08:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.46
+    },
+    {
+        "sensor": 1,
+        "zone": 3,
+        "voltage": 280.6606866740496,
+        "current": 6.378966816294452,
+        "power": 1.473900713624728,
+        "timestamp": "2024-05-15 08:08:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.25
+    },
+    {
+        "sensor": 2,
+        "zone": 1,
+        "voltage": 231.53340205834613,
+        "current": 4.204913528603895,
+        "power": 0.9735779346388246,
+        "timestamp": "2024-05-13 10:07:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.15
+    },
+    {
+        "sensor": 0,
+        "zone": 1,
+        "voltage": 243.05020934989253,
+        "current": 6.005862120715872,
+        "power": 1.4597260457665824,
+        "timestamp": "2024-05-13 01:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.49
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 130.00319354772483,
+        "current": 4.646750291074302,
+        "power": 0.8372364885509344,
+        "timestamp": "2024-05-13 21:10:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 2.14
+    },
+    {
+        "sensor": 1,
+        "zone": 1,
+        "voltage": 220.73324633489,
+        "current": 5.55283427175335,
+        "power": 1.2256951351637515,
+        "timestamp": "2024-05-19 04:23:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.14
+    },
+    {
+        "sensor": 0,
+        "zone": 3,
+        "voltage": 225.02883648103148,
+        "current": 6.090302304601006,
+        "power": 1.370493641422109,
+        "timestamp": "2024-05-18 23:53:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.5
+    },
+    {
+        "sensor": 4,
+        "zone": 1,
+        "voltage": 238.33591350974643,
+        "current": 4.937212746105287,
+        "power": 1.176715110034967,
+        "timestamp": "2024-05-13 22:24:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.04
+    },
+    {
+        "sensor": 3,
+        "zone": 3,
+        "voltage": 232.49281532533263,
+        "current": 5.615874946892904,
+        "power": 1.305650576918134,
+        "timestamp": "2024-05-15 04:23:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.82
+    },
+    {
+        "sensor": 0,
+        "zone": 0,
+        "voltage": 272.3294387758089,
+        "current": 5.3219033697622224,
+        "power": 1.2103662638171406,
+        "timestamp": "2024-05-16 00:00:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 1.34
+    },
+    {
+        "sensor": 2,
+        "zone": 4,
+        "voltage": 181.6075840978232,
+        "current": 3.712201722579621,
+        "power": 0.6741639865214628,
+        "timestamp": "2024-05-19 21:59:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.48
+    },
+    {
+        "sensor": 2,
+        "zone": 0,
+        "voltage": 284.9635446949168,
+        "current": 5.2612299904026845,
+        "power": 1.24942822138823,
+        "timestamp": "2024-05-19 09:38:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.45
+    },
+    {
+        "sensor": 2,
+        "zone": 3,
+        "voltage": 177.12019756203557,
+        "current": 5.61072061256549,
+        "power": 0.9937719433629848,
+        "timestamp": "2024-05-17 20:32:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.75
+    },
+    {
+        "sensor": 4,
+        "zone": 0,
+        "voltage": 232.2902213810775,
+        "current": 5.418275112584785,
+        "power": 1.258612325405902,
+        "timestamp": "2024-05-13 10:28:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.11
+    },
+    {
+        "sensor": 1,
+        "zone": 2,
+        "voltage": 236.3371806189413,
+        "current": 3.187856390999607,
+        "power": 0.7534089916669205,
+        "timestamp": "2024-05-13 05:42:00",
+        "alert": "ANOMALY DETECTED",
+        "severity_score": 0.32
+    }
+]
