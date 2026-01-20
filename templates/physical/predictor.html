@@ -1,0 +1,89 @@
+{% extends 'physical/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Manual Predictor Interface</h1>
+</div>
+
+<div class="dashboard-grid">
+
+    <div class="left-panel">
+        <div class="card form-card">
+            <h3>Input Parameters</h3>
+            <form method="POST">
+                <div class="form-group"><label>Sensor ID</label><input type="number" name="sensor_id" required></div>
+                <div class="form-group"><label>Location (Zone)</label><input type="number" name="location" required>
+                </div>
+                <div class="form-group"><label>Voltage (V)</label><input type="number" step="0.01" name="voltage"
+                        required></div>
+                <div class="form-group"><label>Current (A)</label><input type="number" step="0.01" name="current"
+                        required></div>
+                <div class="form-group"><label>Power (kW)</label><input type="number" step="0.01" name="power" required>
+                </div>
+                <div class="form-group"><label>Frequency (Hz)</label><input type="number" step="0.01" name="frequency"
+                        value="50.0"></div>
+                <div class="form-group"><label>Power Factor</label><input type="number" step="0.01" name="power_factor"
+                        value="0.9"></div>
+                <button type="submit" class="btn">Run Diagnostic</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-panel">
+
+        <div class="card result-card">
+            <h3>Diagnostic Result</h3>
+            {% if result %}
+            <div class="status-indicator">
+                <span class="status-text {% if 'ANOMALY' in result.status %}danger{% else %}success{% endif %}">
+                    {{ result.status }}
+                </span>
+            </div>
+            <div class="result-metrics">
+                <div class="metric"><span>Voltage:</span> <strong>{{ result.voltage }} V</strong></div>
+                <div class="metric"><span>Current:</span> <strong>{{ result.current }} A</strong></div>
+                <div class="metric"><span>Power:</span> <strong>{{ result.power }} kW</strong></div>
+            </div>
+            {% else %}
+            <div class="status-indicator">
+                <span class="status-text placeholder">Awaiting Input...</span>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="card table-card">
+            <h3>Recent Prediction Database</h3>
+            <div class="table-scroll-area">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Sensor</th>
+                            <th>Zone</th>
+                            <th>Voltage</th>
+                            <th>Result</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in history %}
+                        <tr>
+                            <td>{{ row['id'] }}</td>
+                            <td>{{ row['sensor_id'] }}</td>
+                            <td>{{ row['location'] }}</td>
+                            <td>{{ row['voltage'] }}</td>
+                            <td
+                                class="{% if 'ANOMALY' in row['prediction_result'] %}text-danger{% else %}text-success{% endif %}">
+                                {{ row['prediction_result'] }}
+                            </td>
+                            <td>{{ row['timestamp'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

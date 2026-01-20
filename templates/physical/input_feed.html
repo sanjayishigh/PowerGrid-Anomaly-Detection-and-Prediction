@@ -1,0 +1,29 @@
+{% extends 'physical/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Raw Sensor Input Feed</h1>
+    <p>Live stream data ingested from CSV source.</p>
+</div>
+
+<div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                {% for key in headers %}
+                <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                {% for key, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

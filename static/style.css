@@ -1,0 +1,348 @@
+:root {
+    --bg-dark: #0a0e1a;
+    --card-bg: #1a1f35;
+    --primary: #5b8def;
+    --accent: #7ba3f5;
+    --text: #e8ecf5;
+    --danger: #ef4444;
+    --success: #10b981;
+    --border: #2d3548;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a0e1a;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+.highlight { color: var(--primary); }
+
+.nav-links a {
+    color: #8b95b0;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+.main-container { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+
+/* Hero / Home */
+.hero-section { text-align: center; padding: 3rem 0; }
+.hero-desc { max-width: 600px; margin: 0 auto 3rem; color: #8b95b0; line-height: 1.6; }
+.info-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; }
+.center-btn { text-align: center; }
+
+/* Cards & General */
+.card { background: var(--card-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.page-header { margin-bottom: 2rem; }
+.page-header h1 { margin-bottom: 0.5rem; }
+.page-header p { color: #8b95b0; }
+
+/* Professional Table (Input Feed) */
+.table-container { overflow-x: auto; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.data-table { width: 100%; border-collapse: collapse; font-family: 'Roboto Mono', monospace; font-size: 0.85rem; }
+.data-table th, .data-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.data-table th { background: #0f1424; color: var(--primary); font-weight: 600; position: sticky; top: 0; }
+.data-table tr:hover { background: #252b42; }
+
+/* --- EXISTING MAIN CONTAINER --- */
+.main-container {
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- ADD THIS: WIDE MODE FOR DATA PAGES --- */
+.wide-container {
+    max-width: 95vw;
+    padding: 2rem;
+}
+
+/* Optional: Make the table font slightly smaller to fit more data */
+.data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* AI Analysis Cards */
+.analysis-container { display: grid; gap: 1.5rem; }
+.diagnosis-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border-left: 5px solid var(--primary);
+    overflow: hidden;
+    padding: 0;
+    box-shadow: var(--shadow);
+}
+.diagnosis-card.critical { border-left-color: var(--danger); }
+.diagnosis-header {
+    background: rgba(0,0,0,0.3);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.diagnosis-body { padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.io-section h4 { color: #8b95b0; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 1px; }
+.param-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-family: 'Roboto Mono', monospace; font-size: 0.9rem; }
+.param-label { color: #64748b; }
+
+
+/* --- VERTICAL GRAPH GALLERY (BIGGER VERSION) --- */
+
+.center-text {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.vertical-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding-bottom: 4rem;
+}
+
+.vertical-card {
+    width: 95%;
+    max-width: 1600px; 
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+    background: rgba(0,0,0,0.3);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.image-wrapper {
+    padding: 1.5rem;
+    background: #ffffff; 
+    text-align: center;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; 
+    max-height: 85vh;
+}
+
+.graph-caption {
+    padding: 1rem 1.5rem;
+    color: #8b95b0;
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+}
+
+/* Buttons */
+.btn { background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s; border:none; cursor: pointer; }
+.btn:hover { background: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 12px rgba(91, 141, 239, 0.3); }
+.large-btn { padding: 1rem 2.5rem; font-size: 1.1rem; }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #4a5568; }
+
+
+/* --- DASHBOARD GRID LAYOUT (The Sketch Layout) --- */
+
+.page-header h1 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #e8ecf5;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr; 
+    gap: 2rem;
+    align-items: start;
+}
+
+/* --- LEFT PANEL --- */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-card {
+    min-height: 600px;
+    border-top: 4px solid var(--primary);
+}
+
+/* --- RIGHT PANEL --- */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* 1. Diagnostic Result Card */
+.result-card {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.status-indicator {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.status-text.success { color: var(--success); }
+.status-text.danger { color: var(--danger); }
+.status-text.placeholder { color: #64748b; font-size: 1.5rem; }
+
+.result-metrics {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: #8b95b0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.result-metrics strong { color: #e8ecf5; margin-left: 0.5rem; }
+
+/* 2. Table Card (Bottom Right) */
+.table-card {
+    padding: 0;
+    overflow: hidden;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-card h3 {
+    padding: 1.5rem;
+    margin: 0;
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid var(--border);
+}
+
+.table-scroll-area {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-card {
+        min-height: auto;
+    }
+}
+
+/* --- INPUT FORM STYLING --- */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Labels: Small, Uppercase, Muted Grey */
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #8b95b0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Inputs: Dark Background, White Text, Tech Font */
+.form-group input {
+    width: 100%;
+    background-color: #0f1424;
+    border: 1px solid #2d3548;
+    color: #e8ecf5;
+    padding: 0.9rem 1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Hover State */
+.form-group input:hover {
+    border-color: #3d4a63;
+    background-color: #151c30;
+}
+
+/* Focus State (Active): Blue Glow */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #151c30;
+    box-shadow: 0 0 0 4px rgba(91, 141, 239, 0.2);
+}
+
+/* Button Styling (Matching the Blue Accent) */
+.form-card .btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: capitalize;
+}
+
+.form-card .btn:hover {
+    background-color: #4a7ae0;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(91, 141, 239, 0.3);
+}

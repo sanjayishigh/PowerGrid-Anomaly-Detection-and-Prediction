@@ -1,0 +1,15 @@
+{% extends 'physical/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1>AI Analysis & Diagnosis</h1>
+    <p>Detailed breakdown of detected anomalies, comparing Input Conditions vs. AI Severity Output.</p>
+</div>
+
+<div id="analysis-grid" class="analysis-container">
+</div>
+
+<script>
+    const analysisData = {{ data | tojson }};
+</script>
+{% endblock %}

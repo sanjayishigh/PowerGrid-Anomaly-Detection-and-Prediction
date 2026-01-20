@@ -1,0 +1,30 @@
+{% extends 'physical/base.html' %}
+
+{% block content %}
+<div class="hero-section">
+    <h1>Smart Grid <span class="highlight">Anomaly Detection</span> System</h1>
+    <p class="hero-desc">
+        A Machine Learning powered watchdog for modern electrical grids.
+        Detecting voltage instabilities, power theft, and sensor faults in real-time.
+    </p>
+
+    <div class="info-cards">
+        <div class="card">
+            <h3>Machine Learning</h3>
+            <p>Utilizes Random Forest Classification to identify grid anomalies with 96% accuracy.</p>
+        </div>
+        <div class="card">
+            <h3>Regression Analysis</h3>
+            <p>Predicts expected Voltage, Current, and Power levels to calculate severity deviations.</p>
+        </div>
+        <div class="card">
+            <h3>Real-Time Logic</h3>
+            <p>Categorizes threats into critical severity levels and diagnoses root causes automatically.</p>
+        </div>
+    </div>
+
+    <div class="center-btn">
+        <a href="{{ url_for('physical_predictor') }}" class="btn large-btn">Launch Predictor</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,288 @@
+{% extends 'cyber/base.html' %}
+
+{% block content %}
+<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+<style>
+    /* PAGE BACKGROUND */
+    body { background-color: #020617; }
+
+    /* MAIN CONTAINER */
+    #viz-wrapper {
+        display: flex;
+        height: calc(100vh - 100px);
+        margin: 20px;
+        background-color: #000000; /* PURE BLACK */
+        
+        /* CLEAN BORDER */
+        border: 2px solid #334155;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+        
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* GRAPH AREA */
+    #mynetwork {
+        flex-grow: 1;
+        background: #000000;
+        position: relative;
+        cursor: grab;
+    }
+    #mynetwork:active { cursor: grabbing; }
+
+    /* SIDEBAR */
+    #sidebar {
+        width: 320px;
+        background: #0f172a;
+        border-left: 2px solid #334155;
+        display: flex;
+        flex-direction: column;
+        color: #f1f5f9;
+        font-family: 'Inter', sans-serif;
+        z-index: 10;
+    }
+
+    /* HEADER */
+    .sidebar-header {
+        padding: 1.5rem;
+        background: #020617;
+        border-bottom: 1px solid #1e293b;
+    }
+    .sidebar-header h2 {
+        margin: 0;
+        color: #00ff41;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    /* LIST */
+    #node-list {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        scrollbar-width: thin;
+        scrollbar-color: #334155 #0f172a;
+    }
+    
+    /* CARDS */
+    .node-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid #1e293b;
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-left: 4px solid transparent;
+    }
+    .node-card:hover {
+        background: rgba(255,255,255,0.08);
+        transform: translateX(4px);
+        border-color: #475569;
+    }
+    
+    .node-card.attacker { border-left-color: #ff0055; }
+    .node-card.target { border-left-color: #00ccff; }
+
+    .node-header { display: flex; justify-content: space-between; align-items: center; }
+    .node-id { font-weight: 700; font-size: 0.9rem; color: #fff; font-family: 'Roboto Mono', monospace; }
+    
+    .node-badge { 
+        font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; 
+    }
+    .badge-atk { background: rgba(255, 0, 85, 0.2); color: #ff0055; }
+    .badge-tgt { background: rgba(0, 204, 255, 0.2); color: #00ccff; }
+
+    /* REFRESH BUTTON */
+    #scenario-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0.8);
+        color: #00ff41;
+        border: 1px solid #00ff41;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'Roboto Mono', monospace;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: 0.3s;
+    }
+    #scenario-btn:hover {
+        background: #00ff41;
+        color: #000;
+    }
+</style>
+
+<div id="viz-wrapper">
+    <div id="mynetwork">
+        <button id="scenario-btn" onclick="loadNextScenario()">
+            <span>↻</span> REFRESH DATA
+        </button>
+        <div style="position: absolute; bottom: 20px; left: 20px; color: #475569; font-size: 0.75rem; pointer-events: none;">
+            * DRAG NODES TO MOVE
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <h2>Threat Intel</h2>
+            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 8px;">
+                Active Nodes: <strong id="node-count" style="color:white">0</strong>
+            </div>
+        </div>
+        <div id="node-list">
+            <div style="text-align: center; margin-top: 40px; color: #64748b;">Waiting...</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    const container = document.getElementById('mynetwork');
+    let network = null;
+    let currentSourceIndex = 0;
+    const DATA_SOURCES = ["{{ url_for('cyber_graph_data') }}"];
+    
+    const options = {
+        nodes: {
+            shape: 'dot',
+            size: 20,
+            font: { 
+                size: 14, 
+                color: '#e2e8f0', 
+                face: 'monospace', 
+                background: 'rgba(0, 0, 0, 0.8)', 
+                strokeWidth: 0,
+                vadjust: -35
+            },
+            borderWidth: 2,
+            shadow: { enabled: true, color: 'rgba(0,0,0,0.8)', size: 10 }
+        },
+        edges: {
+            // --- CLEANER LINKS CONFIGURATION ---
+            width: 1,  // Thinner lines
+            color: { 
+                color: '#334155', 
+                highlight: '#00ff41', 
+                hover: '#00ff41',
+                opacity: 0.3 // Very faint
+            },
+            arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+            smooth: { type: 'continuous', roundness: 0.2 } // Simple curve, not messy
+        },
+        physics: {
+            enabled: true,
+            solver: 'forceAtlas2Based',
+            forceAtlas2Based: {
+                gravitationalConstant: -100,
+                centralGravity: 0.005,
+                springLength: 230,
+                springConstant: 0.08,
+                damping: 0.9
+            },
+            stabilization: { iterations: 150 }
+        },
+        interaction: {
+            hover: true,
+            tooltipDelay: 100,
+            zoomView: true,
+            dragView: true
+        }
+    };
+
+    function loadNextScenario() {
+        const btn = document.getElementById('scenario-btn');
+        btn.innerHTML = "<span>...</span> LOADING";
+        
+        const urlBase = DATA_SOURCES[currentSourceIndex];
+        currentSourceIndex = (currentSourceIndex + 1) % DATA_SOURCES.length;
+        const url = `${urlBase}?t=${Date.now()}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                initializeGraph(data);
+                btn.innerHTML = "<span>✓</span> UPDATED";
+                setTimeout(() => btn.innerHTML = "<span>↻</span> REFRESH DATA", 1500);
+            })
+            .catch(err => {
+                console.error(err);
+                btn.innerHTML = "ERROR";
+            });
+    }
+
+    function initializeGraph(jsonData) {
+        // NODES
+        const nodes = new vis.DataSet(jsonData.nodes.map(node => ({
+            id: node.id,
+            label: node.id, 
+            value: node.val, 
+            group: node.group,
+            color: node.group === 'Attacker' 
+                ? { background: '#ff0055', border: '#ff99aa' } 
+                : { background: '#00ccff', border: '#ccffff' },
+            title: `ID: ${node.id}\nRole: ${node.group}\nScore: ${node.val}`
+        })));
+
+        // EDGES
+        const edges = new vis.DataSet(jsonData.links.map(link => ({
+            from: link.source,
+            to: link.target,
+            title: `Traffic: ${link.info}`
+        })));
+
+        const data = { nodes: nodes, edges: edges };
+        
+        if (network !== null) { network.destroy(); network = null; }
+        
+        network = new vis.Network(container, data, options);
+        updateSidebar(jsonData.nodes, network);
+        document.getElementById('node-count').innerText = jsonData.nodes.length;
+        
+        network.on("doubleClick", function (params) {
+            if (params.nodes.length > 0) {
+                network.focus(params.nodes[0], { animation: true, scale: 1.5 });
+            }
+        });
+    }
+
+    function updateSidebar(nodesData, networkInstance) {
+        const list = document.getElementById('node-list');
+        list.innerHTML = ""; 
+
+        nodesData.sort((a, b) => (b.group === 'Attacker') - (a.group === 'Attacker'));
+
+        nodesData.forEach(node => {
+            const isAttacker = node.group === 'Attacker';
+            const div = document.createElement('div');
+            div.className = `node-card ${isAttacker ? 'attacker' : 'target'}`;
+            div.innerHTML = `
+                <div class="node-header">
+                    <span class="node-id">${node.id}</span>
+                    <span class="node-badge ${isAttacker ? 'badge-atk' : 'badge-tgt'}">
+                        ${isAttacker ? 'THREAT' : 'ASSET'}
+                    </span>
+                </div>
+                <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">
+                    Activity Score: <span style="color:#fff">${node.val}</span>
+                </div>
+            `;
+            div.onclick = () => {
+                networkInstance.focus(node.id, { scale: 1.5, animation: { duration: 800 } });
+                networkInstance.selectNodes([node.id]);
+            };
+            list.appendChild(div);
+        });
+    }
+
+    loadNextScenario();
+</script>
+{% endblock %}

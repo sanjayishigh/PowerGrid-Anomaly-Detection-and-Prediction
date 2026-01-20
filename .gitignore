@@ -1,0 +1,43 @@
+# --- Python & Flask ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+instance/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Virtual Environments ---
+venv/
+env/
+.env
+.venv/
+
+# --- Machine Learning Artifacts (Large Files) ---
+# Ignore trained models to save space (re-run setup script to generate them)
+*.joblib
+*.pth
+*.pkl
+*.h5
+*.onnx
+
+# --- Data & Logs ---
+# Ignore generated JSONs (they are re-created by the script)
+data/physical/*.json
+data/cyber/*.json
+
+# Keep the source CSV if it's small, otherwise uncomment next line:
+# power_data.csv
+
+# Logs
+*.log
+
+# --- IDE & OS Specific ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Jupyter Notebook Checkpoints ---
+.ipynb_checkpoints/

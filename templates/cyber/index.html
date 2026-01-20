@@ -1,0 +1,30 @@
+{% extends 'cyber/base.html' %}
+
+{% block content %}
+<div class="hero-section">
+    <h1>Autonomous <span class="highlight">Cyber Defense</span> System</h1>
+    <p class="hero-desc">
+        A Hybrid LSTM-Random Forest AI Engine capable of detecting Zero-Day exploits, 
+        DDoS attacks, and Network Intrusions in real-time.
+    </p>
+    
+    <div class="info-cards">
+        <div class="card">
+            <h3>Deep Learning (LSTM)</h3>
+            <p>Analyzes packet sequences to detect temporal anomalies and hidden patterns.</p>
+        </div>
+        <div class="card">
+            <h3>Random Forest</h3>
+            <p>Classifies known attack signatures with high precision and low latency.</p>
+        </div>
+        <div class="card">
+            <h3>Real-Time Logic</h3>
+            <p>Hybrid decision engine combining reconstruction error and classification probability.</p>
+        </div>
+    </div>
+    
+    <div class="center-btn">
+        <a href="{{url_for('cyber_predictor')}}" class="btn large-btn">Launch Threat Scanner</a>
+    </div>
+</div>
+{% endblock %}

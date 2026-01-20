@@ -1,0 +1,81 @@
+{% extends 'cyber/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Manual Packet Inspection</h1>
+</div>
+
+<div class="dashboard-grid">
+    <div class="left-panel">
+        <div class="card form-card">
+            <h3>Packet Parameters</h3>
+            <form method="POST">
+                <div class="form-group"><label>Source IP</label><input type="text" name="source_ip"
+                        placeholder="192.168.x.x" required></div>
+                <div class="form-group"><label>Destination IP</label><input type="text" name="dest_ip"
+                        placeholder="10.0.x.x" required></div>
+                <div class="form-group"><label>Protocol</label><input type="text" name="protocol"
+                        placeholder="TCP/UDP/ICMP" required></div>
+                <div class="form-group"><label>Packet Length (Bytes)</label><input type="number" name="packet_length"
+                        placeholder="64" required></div>
+
+                <button type="submit" class="btn">Scan Packet</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <div class="card result-card">
+            <h3>AI Scan Result</h3>
+            {% if result %}
+            <div class="status-indicator">
+                <span
+                    class="status-text {% if 'MALICIOUS' in result.status or 'DDOS' in result.status %}danger{% else %}success{% endif %}">
+                    {{ result.status }}
+                </span>
+            </div>
+            <div class="result-metrics">
+                <div class="metric"><span>Source:</span> <strong>{{ result.src }}</strong></div>
+                <div class="metric"><span>Protocol:</span> <strong>{{ result.protocol }}</strong></div>
+                <div class="metric"><span>Size:</span> <strong>{{ result.len }} B</strong></div>
+            </div>
+            {% else %}
+            <div class="status-indicator">
+                <span class="status-text placeholder">Ready to Scan...</span>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="card table-card">
+            <h3>Recent Scan Database (SQL)</h3>
+            <div class="table-scroll-area">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Source</th>
+                            <th>Dest</th>
+                            <th>Protocol</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in history %}
+                        <tr>
+                            <td>{{ row['id'] }}</td>
+                            <td>{{ row['source_ip'] }}</td>
+                            <td>{{ row['dest_ip'] }}</td>
+                            <td>{{ row['protocol'] }}</td>
+                            <td
+                                class="{% if 'MALICIOUS' in row['prediction_result'] %}text-danger{% else %}text-success{% endif %}">
+                                {{ row['prediction_result'] }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

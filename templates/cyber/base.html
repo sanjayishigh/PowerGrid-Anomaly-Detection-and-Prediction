@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberWatch Sentinel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">CYBER<span class="highlight">WATCH</span> SENTINEL</div>
+        <div class="nav-links">
+            <a href="{{ url_for('cyber_home') }}">Project Info</a>
+            <a href="{{ url_for('cyber_predictor') }}">Threat Check</a>
+            <a href="{{ url_for('cyber_input_feed') }}">Network Feed</a>
+            <a href="{{ url_for('cyber_analysis') }}">Attack Logs</a>
+            <a href="{{ url_for('cyber_graphs') }}">Visualizations</a>
+            <a href="{{ url_for('cyber_visualization') }}">3D Threat Map</a>
+
+            <a href="{{ url_for('index') }}"
+                style="color: #94a3b8; border-left: 1px solid #334155; padding-left: 1rem; margin-left: 1rem;">Exit to
+                Gateway</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

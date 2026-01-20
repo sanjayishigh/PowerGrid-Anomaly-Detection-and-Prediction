@@ -1,0 +1,15 @@
+{% extends 'cyber/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Intrusion Detection Logs</h1>
+    <p>Anomalies detected by the Hybrid LSTM-RF Engine.</p>
+</div>
+
+<div id="analysis-grid" class="analysis-container">
+    </div>
+
+<script>
+    const analysisData = {{ data | tojson }};
+</script>
+{% endblock %}

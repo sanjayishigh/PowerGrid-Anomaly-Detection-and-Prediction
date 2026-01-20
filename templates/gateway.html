@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Command | AI Defense System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0e1a;
+            --card-bg: #1a1f35;
+            --text-main: #e8ecf5;
+            --phys-color: #5b8def;
+            --cyber-color: #10b981;
+            --border: #2d3548;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #0f1424 50%, #0a0e1a 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background grid */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(91, 141, 239, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(91, 141, 239, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, #e8ecf5 0%, #5b8def 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            color: #8b95b0;
+            margin-bottom: 4rem;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .gateway-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .system-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .system-card:nth-child(1) { animation-delay: 0.3s; }
+        .system-card:nth-child(2) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glow effect on hover */
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, transparent, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .system-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(0 0 20px currentColor);
+        }
+
+        .system-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .system-card h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .system-card p {
+            color: #8b95b0;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Physical Theme */
+        .phys:hover {
+            border-color: var(--phys-color);
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(91, 141, 239, 0.1) 100%);
+        }
+
+        .phys .card-icon {
+            color: var(--phys-color);
+        }
+
+        .phys::before {
+            background: linear-gradient(135deg, var(--phys-color), transparent);
+        }
+
+        .phys:hover::before {
+            opacity: 0.3;
+        }
+
+        /* Cyber Theme */
+        .cyber:hover {
+            border-color: var(--cyber-color);
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(16, 185, 129, 0.1) 100%);
+        }
+
+        .cyber .card-icon {
+            color: var(--cyber-color);
+        }
+
+        .cyber::before {
+            background: linear-gradient(135deg, var(--cyber-color), transparent);
+        }
+
+        .cyber:hover::before {
+            opacity: 0.3;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            color: #475569;
+            font-size: 0.95rem;
+            text-align: center;
+            animation: fadeIn 1.2s ease-out 0.6s both;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--cyber-color);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 10px var(--cyber-color);
+            }
+            50% {
+                opacity: 0.5;
+                box-shadow: 0 0 20px var(--cyber-color);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gateway-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .system-card {
+                padding: 2.5rem 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>AI DEFENSE COMMAND</h1>
+        <p class="subtitle">Select a critical infrastructure system to monitor</p>
+
+        <div class="gateway-container">
+
+            <a href="/physical" class="system-card phys">
+                <div class="card-icon">⚡</div>
+                <h2>Smart Grid Watchdog</h2>
+                <p>
+                    Monitor voltage stability, detect power theft, and prevent
+                    infrastructure failure using Random Forest regression logic.
+                </p>
+            </a>
+
+            <a href="/cyber" class="system-card cyber">
+                <div class="card-icon">🛡️</div>
+                <h2>Cyber Sentinel</h2>
+                <p>
+                    Real-time network intrusion detection system using
+                    Hybrid LSTM Deep Learning for packet analysis.
+                </p>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            <span class="status-dot"></span>
+            System Status: ONLINE
+        </div>
+    </div>
+</body>
+
+</html>
