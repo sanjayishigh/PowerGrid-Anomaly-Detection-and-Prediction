@@ -16,7 +16,6 @@ env/
 
 # --- Machine Learning Artifacts (Large Files) ---
 # Ignore trained models to save space (re-run setup script to generate them)
-*.joblib
 *.pth
 *.pkl
 *.h5
