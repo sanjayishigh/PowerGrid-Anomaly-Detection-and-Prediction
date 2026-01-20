@@ -1,9 +1,22 @@
 import os
+import warnings
+
+# --- 1. SILENCE TENSORFLOW & VERSION WARNINGS (MUST BE FIRST) ---
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'   # Hides TensorFlow INFO/WARNING logs
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'  # Hides OneDNN custom ops message
+
+# Filter the specific version mismatch warnings (1.6 vs 1.8)
+from sklearn.exceptions import InconsistentVersionWarning
+warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
+warnings.filterwarnings("ignore", category=UserWarning, module='sklearn')
+
+# --- 2. REGULAR IMPORTS ---
 import json
 import pandas as pd
 import joblib
 import numpy as np
 from flask import Flask, render_template, request, g
+from tensorflow.keras.models import load_model
 
 # Database Imports
 import sqlite3
@@ -13,8 +26,6 @@ from psycopg2.extras import RealDictCursor
 app = Flask(__name__)
 
 # --- DATABASE CONFIGURATION ---
-# Render provides a 'DATABASE_URL' environment variable. 
-# If it exists, we use Postgres. If not, we use local SQLite.
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 models = {
@@ -23,33 +34,44 @@ models = {
 }
 
 # --- LOAD MODELS ---
+print(">> STARTING SERVER & LOADING MODELS...")
+
+# 1. Load Physical Models
 try:
     models["phys"]["zone_models"] = joblib.load('models/physical/zone_models.joblib')
     models["phys"]["zone_scalers"] = joblib.load('models/physical/zone_scalers.joblib')
-except Exception:
-    pass # Fail silently or log error
+    print(f"   [+] Physical Models Loaded: {len(models['phys']['zone_models'])} zones active")
+except Exception as e:
+    print(f"   [!] PHYSICAL MODEL ERROR: {e}")
 
+# 2. Load Cyber Models (Hybrid)
 try:
-    models["cyber"]["rf"] = joblib.load('models/cyber/rf_model.joblib')
-    models["cyber"]["scaler"] = joblib.load('models/cyber/scaler.joblib')
-except Exception:
-    pass
+    # Load the Joblib Bundle (RF, Scaler, Encoders, Threshold)
+    cyber_artifacts = joblib.load('models/cyber/cyber_atk_hybrid_model.joblib')
+    
+    models["cyber"]["rf"] = cyber_artifacts["rf_model"]
+    models["cyber"]["scaler"] = cyber_artifacts["scaler"]
+    models["cyber"]["encoders"] = cyber_artifacts.get("encoders", {}) 
+    
+    # Load the Keras LSTM Model
+    models["cyber"]["lstm"] = load_model('models/cyber/lstm_autoencoder.keras')
+    
+    print("   [+] Cyber Hybrid System Loaded (RF + LSTM)")
+except Exception as e:
+    print(f"   [!] CYBER MODEL ERROR: {e}")
+
 
 # --- DATABASE HELPER FUNCTIONS ---
 def get_db():
-    """Smart connection: Uses Postgres on Render, SQLite locally."""
     db = getattr(g, '_database', None)
     if db is None:
         if DATABASE_URL:
-            # Connect to Render's Postgres
             conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
             db = conn
         else:
-            # Connect to local SQLite (Merges both physical/cyber into one file for simplicity)
             conn = sqlite3.connect('local_data.db')
             conn.row_factory = sqlite3.Row
             db = conn
-        
         setattr(g, '_database', db)
     return db
 
@@ -60,20 +82,12 @@ def close_connection(exception):
         db.close()
 
 def init_dbs():
-    """Initializes tables for both systems."""
     with app.app_context():
         db = get_db()
         cursor = db.cursor()
         
-        # SQL Syntax differs slightly between SQLite and Postgres
-        if DATABASE_URL:
-            # Postgres Syntax (SERIAL instead of AUTOINCREMENT)
-            id_type = "SERIAL PRIMARY KEY"
-        else:
-            # SQLite Syntax
-            id_type = "INTEGER PRIMARY KEY AUTOINCREMENT"
+        id_type = "SERIAL PRIMARY KEY" if DATABASE_URL else "INTEGER PRIMARY KEY AUTOINCREMENT"
 
-        # Create Physical Table
         cursor.execute(f'''
             CREATE TABLE IF NOT EXISTS predictions (
                 id {id_type},
@@ -87,7 +101,6 @@ def init_dbs():
             )
         ''')
 
-        # Create Cyber Table
         cursor.execute(f'''
             CREATE TABLE IF NOT EXISTS cyber_logs (
                 id {id_type},
@@ -99,10 +112,8 @@ def init_dbs():
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-        
         db.commit()
 
-# Initialize DB on startup
 init_dbs()
 
 def load_json_data(filepath):
@@ -151,6 +162,7 @@ def physical_predictor():
 
     if request.method == 'POST':
         try:
+            # Inputs
             s_id = int(request.form['sensor_id'])
             loc = int(request.form['location'])
             vol = float(request.form['voltage'])
@@ -160,18 +172,71 @@ def physical_predictor():
             pf = float(request.form['power_factor'])
 
             status = "Model Not Loaded"
-            if "zone_models" in models["phys"]:
-                # Prediction logic
-                if loc in models["phys"]["zone_models"]:
+            
+            # --- HYBRID PHYSICAL PREDICTION ---
+            if "zone_models" in models["phys"] and loc in models["phys"]["zone_models"]:
+                
+                # --- 1. DEFINE THRESHOLDS ---
+                # Normal Ranges
+                V_MIN, V_MAX = 210, 245
+                I_MIN, I_MAX = 2.5, 7.5
+                P_MIN, P_MAX = 0.5, 1.8
+                
+                # Buffer Percentage (0.1% = 0.001)
+                BUFFER_PCT = 0.001 
+                
+                # Check strict Normal condition
+                is_normal = (
+                    (V_MIN <= vol <= V_MAX) and
+                    (I_MIN <= cur <= I_MAX) and
+                    (P_MIN <= pow_ <= P_MAX)
+                )
+
+                # Check "Extended Safe Zone" (Normal + Buffer)
+                # If a value is inside this extended zone, it is at least Moderate.
+                # If it is outside this extended zone, it is Critical.
+                in_moderate_zone = (
+                    (V_MIN * (1 - BUFFER_PCT) <= vol <= V_MAX * (1 + BUFFER_PCT)) and
+                    (I_MIN * (1 - BUFFER_PCT) <= cur <= I_MAX * (1 + BUFFER_PCT)) and
+                    (P_MIN * (1 - BUFFER_PCT) <= pow_ <= P_MAX * (1 + BUFFER_PCT))
+                )
+
+                # --- 2. DETERMINE STATUS ---
+                
+                if is_normal:
+                    status = "NORMAL (Safe Range)"
+                
+                elif in_moderate_zone:
+                    # It's not Normal, but it IS inside the buffer -> Moderate
+                    status = "MODERATE ALERT"
+                    
+                else:
+                    # It's outside the buffer -> Critical
+                    status = "CRITICAL ALERT"
+                
+                # --- 3. ML MODEL CHECK (Fallback / Context) ---
+                # Only run ML if we haven't already flagged a Critical/Moderate alert?
+                # Actually, typically heuristic rules override ML.
+                # If status is "NORMAL" so far, we let ML have a say (to detect weird patterns inside normal range)
+                # But here, let's keep it simple: If heuristics say NORMAL, we check ML.
+                
+                if status == "NORMAL (Safe Range)":
+                     # Prepare Features
                     features = pd.DataFrame([[vol, cur, pow_, freq, pf, s_id]], 
                                           columns=["Voltage (V)", "Current (A)", "Power (kW)", "Frequency (Hz)", "Power_Factor", "Sensor_ID"])
+                    
                     scaler = models["phys"]["zone_scalers"][loc]
                     model = models["phys"]["zone_models"][loc]
+                    
                     X_scaled = scaler.transform(features)
                     pred = model.predict(X_scaled)[0]
-                    status = "ANOMALY DETECTED" if pred == 1 else "NORMAL"
-                else:
-                    status = "Unknown Zone"
+                    
+                    # Isolation Forest: -1 = Anomaly, 1 = Normal
+                    if pred == -1: 
+                        status = "ANOMALY DETECTED (ML)"
+
+            else:
+                status = f"Unknown Zone {loc} (No Model)"
 
             result = {'status': status, 'voltage': vol, 'current': cur, 'power': pow_}
 
@@ -223,16 +288,72 @@ def cyber_predictor():
 
     if request.method == 'POST':
         try:
+            # Inputs from Form
             src = request.form['source_ip']
             dst = request.form['dest_ip']
             proto = request.form['protocol']
             pkt_len = float(request.form['packet_length'])
             
             status = "SAFE TRAFFIC"
-            if pkt_len > 1500 or "666" in src:
-                status = "MALICIOUS PACKET DETECTED"
+            
+            # 1. Heuristic Rules (Fast Check)
+            if pkt_len > 1500:
+                status = "MALICIOUS (Oversized Packet)"
+            elif "666" in src:
+                status = "BLACKLISTED IP DETECTED"
             elif proto.upper() == "UDP" and pkt_len > 800:
-                status = "POSSIBLE DDOS"
+                status = "POSSIBLE DDOS (UDP Flood)"
+            
+            # 2. ML Model Check (Random Forest)
+            elif "rf" in models["cyber"] and models["cyber"]["rf"]:
+                try:
+                    # RECONSTRUCT FEATURE VECTOR
+                    # Your model expects 12 specific columns based on your training.
+                    # We fill missing values with averages/defaults to prevent shape errors.
+                    
+                    input_data = {
+                        "Source_IP": [src],
+                        "Destination_IP": [dst],
+                        "Port": [80],        # Default Port
+                        "Protocol": [proto],
+                        "Packet_Size": [pkt_len],
+                        "Duration": [50.0],  # Default Duration
+                        "Attack_Type": ["Normal"], # Assume normal initially
+                        "Packet_Loss": [0],
+                        "Latency": [10],
+                        "Throughput": [100],
+                        "Jitter": [5],
+                        "Authentication_Failure": [0]
+                    }
+                    
+                    features = pd.DataFrame(input_data)
+                    
+                    # Apply Encoders (if available) to convert Text -> Numbers
+                    encoders = models["cyber"].get("encoders", {})
+                    for col in ["Source_IP", "Destination_IP", "Protocol", "Attack_Type"]:
+                        if col in encoders:
+                            try:
+                                # Try to transform known labels
+                                features[col] = encoders[col].transform(features[col])
+                            except:
+                                # If label is new/unknown, use 0
+                                features[col] = 0
+                        else:
+                            # Fallback if no encoders exist
+                            features[col] = 0
+                            
+                    # Scale Features
+                    if "scaler" in models["cyber"]:
+                        features_scaled = models["cyber"]["scaler"].transform(features)
+                        
+                        # Predict with RF
+                        pred = models["cyber"]["rf"].predict(features_scaled)[0]
+                        if pred == 1:
+                            status = "ANOMALY DETECTED (Hybrid AI)"
+                            
+                except Exception as e:
+                    print(f"   [!] Cyber ML Inference Error: {e}")
+                    # If ML fails, we keep the Heuristic status
             
             result = {"status": status, "src": src, "protocol": proto, "len": pkt_len}
 

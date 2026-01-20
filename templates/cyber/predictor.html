@@ -29,8 +29,7 @@
             <h3>AI Scan Result</h3>
             {% if result %}
             <div class="status-indicator">
-                <span
-                    class="status-text {% if 'MALICIOUS' in result.status or 'DDOS' in result.status %}danger{% else %}success{% endif %}">
+                <span class="status-text {% if 'SAFE' not in result.status %}danger{% else %}success{% endif %}">
                     {{ result.status }}
                 </span>
             </div>
@@ -66,8 +65,7 @@
                             <td>{{ row['source_ip'] }}</td>
                             <td>{{ row['dest_ip'] }}</td>
                             <td>{{ row['protocol'] }}</td>
-                            <td
-                                class="{% if 'MALICIOUS' in row['prediction_result'] %}text-danger{% else %}text-success{% endif %}">
+                            <td class="{% if 'SAFE' not in row['prediction_result'] %}text-danger{% else %}text-success{% endif %}">
                                 {{ row['prediction_result'] }}
                             </td>
                         </tr>

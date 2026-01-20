@@ -35,7 +35,7 @@
             <h3>Diagnostic Result</h3>
             {% if result %}
             <div class="status-indicator">
-                <span class="status-text {% if 'ANOMALY' in result.status %}danger{% else %}success{% endif %}">
+                <span class="status-text {% if 'NORMAL' not in result.status %}danger{% else %}success{% endif %}">
                     {{ result.status }}
                 </span>
             </div>
@@ -46,7 +46,12 @@
             </div>
             {% else %}
             <div class="status-indicator">
-                <span class="status-text placeholder">Awaiting Input...</span>
+                <span class="status-text 
+                    {% if 'NORMAL' in result.status %}success
+                    {% elif 'MODERATE' in result.status %}warning
+                    {% else %}danger{% endif %}">
+                    {{ result.status }}
+                </span>
             </div>
             {% endif %}
         </div>
@@ -73,7 +78,7 @@
                             <td>{{ row['location'] }}</td>
                             <td>{{ row['voltage'] }}</td>
                             <td
-                                class="{% if 'ANOMALY' in row['prediction_result'] %}text-danger{% else %}text-success{% endif %}">
+                                class="{% if 'NORMAL' not in row['prediction_result'] %}text-danger{% else %}text-success{% endif %}">
                                 {{ row['prediction_result'] }}
                             </td>
                             <td>{{ row['timestamp'] }}</td>
