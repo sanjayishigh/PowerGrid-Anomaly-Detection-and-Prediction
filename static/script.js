@@ -1,12 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Check if the analysis container exists on this page
     const analysisContainer = document.getElementById('analysis-grid');
-    
-    // Check if 'analysisData' variable was passed from Flask
+
     if (analysisContainer && typeof analysisData !== 'undefined') {
-        
-        // 1. Handle Empty Data
         if (!analysisData || analysisData.length === 0) {
             analysisContainer.innerHTML = "<p style='color:#94a3b8; text-align:center; padding: 2rem;'>No anomaly logs found in the database.</p>";
             return;
@@ -14,19 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let html = '';
 
-        // 2. Loop through data and DETECT TYPE
         analysisData.forEach(item => {
-            
-            // --- DETECT SYSTEM TYPE ---
-            // If it has 'source_ip', it's CYBER. If it has 'voltage', it's PHYSICAL.
             const isCyber = item.hasOwnProperty('source_ip');
 
             if (isCyber) {
-                // ==========================================
-                //  CYBER SECURITY CARD RENDERER
-                // ==========================================
-                
-                // Safety checks for missing fields
                 const src = item.source_ip || "Unknown";
                 const dst = item.dest_ip || "Unknown";
                 const protocol = item.protocol || "TCP";
@@ -35,10 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const time = item.timestamp || "N/A";
                 const len = item.packet_length || 0;
 
-                // Cyber Logic
                 const isCritical = score > 1.5;
-                const borderClass = isCritical ? 'critical' : 'warning'; // You need CSS for .warning if not exists, or default to standard
-                const alertColor = isCritical ? '#ef4444' : '#f59e0b'; // Red vs Orange
+                const borderClass = isCritical ? 'critical' : 'warning'; 
+                const alertColor = isCritical ? '#ef4444' : '#f59e0b'; 
                 const actionText = isCritical ? 'BLOCK IP' : 'FLAGGED';
                 const actionBg = isCritical ? '#b91c1c' : '#b45309';
 
@@ -78,25 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
 
             } else {
-                // ==========================================
-                //  PHYSICAL GRID CARD RENDERER
-                // ==========================================
-                
-                // Safety checks
                 const sensor = item.sensor || item.sensor_id || "N/A";
                 const zone = item.zone || item.location || "N/A";
                 const alertName = item.alert || "ANOMALY";
                 const score = item.severity_score || 0;
                 
-                // Get metrics (handle slight naming variations if any)
                 const vol = item.voltage || (item.metrics && item.metrics.voltage ? item.metrics.voltage.actual : 0);
                 const cur = item.current || (item.metrics && item.metrics.current ? item.metrics.current.actual : 0);
-                const pow = item.power   || (item.metrics && item.metrics.power ? item.metrics.power.actual : 0);
+                const pow = item.power    || (item.metrics && item.metrics.power ? item.metrics.power.actual : 0);
                 const time = item.timestamp || "N/A";
 
-                // Physical Logic
                 const isCritical = score > 1.0;
-                const alertColor = isCritical ? '#ef4444' : '#f59e0b'; // Red vs Orange
+                const alertColor = isCritical ? '#ef4444' : '#f59e0b'; 
 
                 html += `
                 <div class="diagnosis-card" style="border-left: 5px solid ${alertColor}; background: #1e293b; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem;">

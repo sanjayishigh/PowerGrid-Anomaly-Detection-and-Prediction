@@ -8,12 +8,9 @@ from flask import Flask, render_template, request, g
 
 app = Flask(__name__)
 
-# --- CONFIGURATION ---
 PHYSICAL_DB = 'physical.db'
 CYBER_DB = 'cyber.db'
 
-# --- MODEL LOADING (Safe Mode) ---
-# We use try/except blocks so the app doesn't crash if a model file is missing
 models = {
     "phys": {},
     "cyber": {}
@@ -34,7 +31,6 @@ except Exception as e:
     print(f"!! WARNING: Cyber models missing: {e}")
 
 
-# --- DUAL DATABASE HANDLING ---
 def get_db(db_name):
     """Connects to the specific database requested."""
     db_attr = f'_database_{db_name}'
@@ -57,7 +53,6 @@ def close_connection(exception):
 def init_dbs():
     """Creates tables for both databases if they don't exist."""
     with app.app_context():
-        # 1. Physical DB
         db_phys = get_db(PHYSICAL_DB)
         db_phys.execute('''
             CREATE TABLE IF NOT EXISTS predictions (
@@ -73,7 +68,6 @@ def init_dbs():
         ''')
         db_phys.commit()
 
-        # 2. Cyber DB
         db_cyber = get_db(CYBER_DB)
         db_cyber.execute('''
             CREATE TABLE IF NOT EXISTS cyber_logs (
@@ -88,11 +82,9 @@ def init_dbs():
         ''')
         db_cyber.commit()
 
-# Initialize databases on start
 init_dbs()
 
 
-# --- HELPER: LOAD JSON ---
 def load_json_data(filepath):
     try:
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -103,18 +95,10 @@ def load_json_data(filepath):
         return []
 
 
-# =========================================================
-#  ROUTES
-# =========================================================
-
 @app.route('/')
 def index():
     return render_template('gateway.html')
 
-
-# ---------------------------------------------------------
-#  PHYSICAL GRID SYSTEM
-# ---------------------------------------------------------
 
 @app.route('/physical')
 def physical_home():
@@ -133,7 +117,6 @@ def physical_analysis():
 
 @app.route('/physical/graphs')
 def physical_graphs():
-    # ADD 'images/' prefix here
     images = [
         'images/phys_graph1.png', 
         'images/phys_graph2.png', 
@@ -147,7 +130,6 @@ def physical_predictor():
     result = None
     if request.method == 'POST':
         try:
-            # Inputs
             s_id = int(request.form['sensor_id'])
             loc = int(request.form['location'])
             vol = float(request.form['voltage'])
@@ -156,14 +138,11 @@ def physical_predictor():
             freq = float(request.form['frequency'])
             pf = float(request.form['power_factor'])
 
-            # Prediction Logic
             status = "Model Not Loaded"
             if "zone_models" in models["phys"]:
-                # Construct DataFrame
                 features = pd.DataFrame([[vol, cur, pow_, freq, pf, s_id]], 
                                         columns=["Voltage (V)", "Current (A)", "Power (kW)", "Frequency (Hz)", "Power_Factor", "Sensor_ID"])
                 
-                # Check Zone
                 if loc in models["phys"]["zone_models"]:
                     scaler = models["phys"]["zone_scalers"][loc]
                     model = models["phys"]["zone_models"][loc]
@@ -176,7 +155,6 @@ def physical_predictor():
 
             result = {'status': status, 'voltage': vol, 'current': cur, 'power': pow_}
 
-            # Save to PHYSICAL DB
             db = get_db(PHYSICAL_DB)
             db.execute('INSERT INTO predictions (sensor_id, location, voltage, current, power, prediction_result) VALUES (?, ?, ?, ?, ?, ?)',
                        (s_id, loc, vol, cur, pow_, status))
@@ -185,17 +163,12 @@ def physical_predictor():
         except Exception as e:
             result = {'status': f"Error: {str(e)}"}
 
-    # Fetch History from PHYSICAL DB
     db = get_db(PHYSICAL_DB)
     cur = db.execute('SELECT * FROM predictions ORDER BY id DESC LIMIT 10')
     history = cur.fetchall()
     
     return render_template('physical/predictor.html', result=result, history=history)
 
-
-# ---------------------------------------------------------
-#  CYBER SECURITY SYSTEM
-# ---------------------------------------------------------
 
 @app.route('/cyber')
 def cyber_home():
@@ -204,7 +177,6 @@ def cyber_home():
 @app.route('/cyber/input_feed')
 def cyber_input_feed():
     data = load_json_data('data/cyber/input_data.json')
-    # Limit sample size for display
     data = data[:50] 
     headers = data[0].keys() if data else []
     return render_template('cyber/input_feed.html', data=data, headers=headers)
@@ -216,7 +188,6 @@ def cyber_analysis():
 
 @app.route('/cyber/graphs')
 def cyber_graphs():
-    # ADD 'images/' prefix here
     images = [
         'images/cyber_graph1.png', 
         'images/cyber_graph2.png', 
@@ -236,9 +207,6 @@ def cyber_predictor():
             proto = request.form['protocol']
             pkt_len = float(request.form['packet_length'])
             
-            # Prediction Logic (Heuristic/Hybrid Simulation for Demo)
-            # (Integrating RF prediction here requires encoding IPs which is complex for manual input)
-            # We stick to the robust heuristic we used earlier to ensure stability
             status = "SAFE TRAFFIC"
             if pkt_len > 1500 or "666" in src:
                 status = "MALICIOUS PACKET DETECTED"
@@ -247,7 +215,6 @@ def cyber_predictor():
             
             result = {"status": status, "src": src, "protocol": proto, "len": pkt_len}
 
-            # Save to CYBER DB
             db = get_db(CYBER_DB)
             db.execute('INSERT INTO cyber_logs (source_ip, dest_ip, protocol, packet_len, prediction_result) VALUES (?, ?, ?, ?, ?)',
                        (src, dst, proto, pkt_len, status))
@@ -256,14 +223,12 @@ def cyber_predictor():
         except Exception as e:
             result = {"status": f"Error: {str(e)}"}
 
-    # Fetch History from CYBER DB
     db = get_db(CYBER_DB)
     cur = db.execute('SELECT * FROM cyber_logs ORDER BY id DESC LIMIT 10')
     history = cur.fetchall()
     
     return render_template('cyber/predictor.html', result=result, history=history)
 
-# --- ADD TO app.py (Inside Cyber Section) ---
 
 @app.route('/cyber/visualization')
 def cyber_visualization():
@@ -271,11 +236,9 @@ def cyber_visualization():
 
 @app.route('/cyber/graph_data')
 def cyber_graph_data():
-    # Helper route to serve the JSON file to the frontend
     data = load_json_data('data/cyber/cyber_graph_data.json')
-    return data  # Flask automatically converts dict to JSON response
+    return data 
 
-# --- ADD TO app.py  ---
 
 @app.route('/physical/visualization')
 def physical_visualization():
@@ -283,7 +246,6 @@ def physical_visualization():
 
 @app.route('/physical/graph_data')
 def physical_graph_data():
-    # Helper route to serve the JSON to the frontend
     data = load_json_data('data/physical/physical_graph_data.json')
     return data
 
