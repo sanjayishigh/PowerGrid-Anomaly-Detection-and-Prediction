@@ -1,89 +1,109 @@
 import os
 import json
-import sqlite3
 import pandas as pd
 import joblib
 import numpy as np
 from flask import Flask, render_template, request, g
 
+# Database Imports
+import sqlite3
+import psycopg2
+from psycopg2.extras import RealDictCursor
+
 app = Flask(__name__)
 
-PHYSICAL_DB = 'physical.db'
-CYBER_DB = 'cyber.db'
+# --- DATABASE CONFIGURATION ---
+# Render provides a 'DATABASE_URL' environment variable. 
+# If it exists, we use Postgres. If not, we use local SQLite.
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 models = {
     "phys": {},
     "cyber": {}
 }
 
+# --- LOAD MODELS ---
 try:
     models["phys"]["zone_models"] = joblib.load('models/physical/zone_models.joblib')
     models["phys"]["zone_scalers"] = joblib.load('models/physical/zone_scalers.joblib')
-    print(">> PHYSICAL MODELS LOADED")
-except Exception as e:
-    print(f"!! WARNING: Physical models missing: {e}")
+except Exception:
+    pass # Fail silently or log error
 
 try:
     models["cyber"]["rf"] = joblib.load('models/cyber/rf_model.joblib')
     models["cyber"]["scaler"] = joblib.load('models/cyber/scaler.joblib')
-    print(">> CYBER MODELS LOADED")
-except Exception as e:
-    print(f"!! WARNING: Cyber models missing: {e}")
+except Exception:
+    pass
 
-
-def get_db(db_name):
-    """Connects to the specific database requested."""
-    db_attr = f'_database_{db_name}'
-    db = getattr(g, db_attr, None)
+# --- DATABASE HELPER FUNCTIONS ---
+def get_db():
+    """Smart connection: Uses Postgres on Render, SQLite locally."""
+    db = getattr(g, '_database', None)
     if db is None:
-        db = sqlite3.connect(db_name)
-        db.row_factory = sqlite3.Row
-        setattr(g, db_attr, db)
+        if DATABASE_URL:
+            # Connect to Render's Postgres
+            conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
+            db = conn
+        else:
+            # Connect to local SQLite (Merges both physical/cyber into one file for simplicity)
+            conn = sqlite3.connect('local_data.db')
+            conn.row_factory = sqlite3.Row
+            db = conn
+        
+        setattr(g, '_database', db)
     return db
 
 @app.teardown_appcontext
 def close_connection(exception):
-    """Closes all active database connections."""
-    for db_name in [PHYSICAL_DB, CYBER_DB]:
-        db_attr = f'_database_{db_name}'
-        db = getattr(g, db_attr, None)
-        if db is not None:
-            db.close()
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()
 
 def init_dbs():
-    """Creates tables for both databases if they don't exist."""
+    """Initializes tables for both systems."""
     with app.app_context():
-        db_phys = get_db(PHYSICAL_DB)
-        db_phys.execute('''
+        db = get_db()
+        cursor = db.cursor()
+        
+        # SQL Syntax differs slightly between SQLite and Postgres
+        if DATABASE_URL:
+            # Postgres Syntax (SERIAL instead of AUTOINCREMENT)
+            id_type = "SERIAL PRIMARY KEY"
+        else:
+            # SQLite Syntax
+            id_type = "INTEGER PRIMARY KEY AUTOINCREMENT"
+
+        # Create Physical Table
+        cursor.execute(f'''
             CREATE TABLE IF NOT EXISTS predictions (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 sensor_id INTEGER,
                 location INTEGER,
                 voltage REAL,
                 current REAL,
                 power REAL,
                 prediction_result TEXT,
-                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-        db_phys.commit()
 
-        db_cyber = get_db(CYBER_DB)
-        db_cyber.execute('''
+        # Create Cyber Table
+        cursor.execute(f'''
             CREATE TABLE IF NOT EXISTS cyber_logs (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 source_ip TEXT,
                 dest_ip TEXT,
                 protocol TEXT,
                 packet_len INTEGER,
                 prediction_result TEXT,
-                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-        db_cyber.commit()
+        
+        db.commit()
 
+# Initialize DB on startup
 init_dbs()
-
 
 def load_json_data(filepath):
     try:
@@ -94,11 +114,11 @@ def load_json_data(filepath):
     except FileNotFoundError:
         return []
 
+# ================= ROUTES =================
 
 @app.route('/')
 def index():
     return render_template('gateway.html')
-
 
 @app.route('/physical')
 def physical_home():
@@ -112,22 +132,23 @@ def physical_input_feed():
 
 @app.route('/physical/analysis')
 def physical_analysis():
-    analysis_data = load_json_data('data/physical/anomaly_output.json')
-    return render_template('physical/analysis.html', data=analysis_data)
+    data = load_json_data('data/physical/anomaly_output.json')
+    return render_template('physical/analysis.html', data=data)
 
 @app.route('/physical/graphs')
 def physical_graphs():
     images = [
-        'images/phys_graph1.png', 
-        'images/phys_graph2.png', 
-        'images/phys_graph3.png', 
-        'images/phys_graph4.png'
+        'images/phys_graph1.png', 'images/phys_graph2.png',
+        'images/phys_graph3.png', 'images/phys_graph4.png'
     ]
     return render_template('physical/graphs.html', images=images)
 
 @app.route('/physical/predictor', methods=['GET', 'POST'])
 def physical_predictor():
     result = None
+    db = get_db()
+    cursor = db.cursor()
+
     if request.method == 'POST':
         try:
             s_id = int(request.form['sensor_id'])
@@ -140,13 +161,12 @@ def physical_predictor():
 
             status = "Model Not Loaded"
             if "zone_models" in models["phys"]:
-                features = pd.DataFrame([[vol, cur, pow_, freq, pf, s_id]], 
-                                        columns=["Voltage (V)", "Current (A)", "Power (kW)", "Frequency (Hz)", "Power_Factor", "Sensor_ID"])
-                
+                # Prediction logic
                 if loc in models["phys"]["zone_models"]:
+                    features = pd.DataFrame([[vol, cur, pow_, freq, pf, s_id]], 
+                                          columns=["Voltage (V)", "Current (A)", "Power (kW)", "Frequency (Hz)", "Power_Factor", "Sensor_ID"])
                     scaler = models["phys"]["zone_scalers"][loc]
                     model = models["phys"]["zone_models"][loc]
-                    
                     X_scaled = scaler.transform(features)
                     pred = model.predict(X_scaled)[0]
                     status = "ANOMALY DETECTED" if pred == 1 else "NORMAL"
@@ -155,20 +175,21 @@ def physical_predictor():
 
             result = {'status': status, 'voltage': vol, 'current': cur, 'power': pow_}
 
-            db = get_db(PHYSICAL_DB)
-            db.execute('INSERT INTO predictions (sensor_id, location, voltage, current, power, prediction_result) VALUES (?, ?, ?, ?, ?, ?)',
-                       (s_id, loc, vol, cur, pow_, status))
+            cursor.execute('''
+                INSERT INTO predictions (sensor_id, location, voltage, current, power, prediction_result)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            ''' if DATABASE_URL else '''
+                INSERT INTO predictions (sensor_id, location, voltage, current, power, prediction_result)
+                VALUES (?, ?, ?, ?, ?, ?)
+            ''', (s_id, loc, vol, cur, pow_, status))
             db.commit()
 
         except Exception as e:
             result = {'status': f"Error: {str(e)}"}
 
-    db = get_db(PHYSICAL_DB)
-    cur = db.execute('SELECT * FROM predictions ORDER BY id DESC LIMIT 10')
-    history = cur.fetchall()
-    
+    cursor.execute('SELECT * FROM predictions ORDER BY id DESC LIMIT 10')
+    history = cursor.fetchall()
     return render_template('physical/predictor.html', result=result, history=history)
-
 
 @app.route('/cyber')
 def cyber_home():
@@ -176,8 +197,7 @@ def cyber_home():
 
 @app.route('/cyber/input_feed')
 def cyber_input_feed():
-    data = load_json_data('data/cyber/input_data.json')
-    data = data[:50] 
+    data = load_json_data('data/cyber/input_data.json')[:50]
     headers = data[0].keys() if data else []
     return render_template('cyber/input_feed.html', data=data, headers=headers)
 
@@ -189,10 +209,8 @@ def cyber_analysis():
 @app.route('/cyber/graphs')
 def cyber_graphs():
     images = [
-        'images/cyber_graph1.png', 
-        'images/cyber_graph2.png', 
-        'images/cyber_graph3.png', 
-        'images/cyber_graph4.png', 
+        'images/cyber_graph1.png', 'images/cyber_graph2.png',
+        'images/cyber_graph3.png', 'images/cyber_graph4.png',
         'images/cyber_graph5.png'
     ]
     return render_template('cyber/graphs.html', images=images)
@@ -200,6 +218,9 @@ def cyber_graphs():
 @app.route('/cyber/predictor', methods=['GET', 'POST'])
 def cyber_predictor():
     result = None
+    db = get_db()
+    cursor = db.cursor()
+
     if request.method == 'POST':
         try:
             src = request.form['source_ip']
@@ -215,20 +236,21 @@ def cyber_predictor():
             
             result = {"status": status, "src": src, "protocol": proto, "len": pkt_len}
 
-            db = get_db(CYBER_DB)
-            db.execute('INSERT INTO cyber_logs (source_ip, dest_ip, protocol, packet_len, prediction_result) VALUES (?, ?, ?, ?, ?)',
-                       (src, dst, proto, pkt_len, status))
+            cursor.execute('''
+                INSERT INTO cyber_logs (source_ip, dest_ip, protocol, packet_len, prediction_result)
+                VALUES (%s, %s, %s, %s, %s)
+            ''' if DATABASE_URL else '''
+                INSERT INTO cyber_logs (source_ip, dest_ip, protocol, packet_len, prediction_result)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (src, dst, proto, pkt_len, status))
             db.commit()
 
         except Exception as e:
             result = {"status": f"Error: {str(e)}"}
 
-    db = get_db(CYBER_DB)
-    cur = db.execute('SELECT * FROM cyber_logs ORDER BY id DESC LIMIT 10')
-    history = cur.fetchall()
-    
+    cursor.execute('SELECT * FROM cyber_logs ORDER BY id DESC LIMIT 10')
+    history = cursor.fetchall()
     return render_template('cyber/predictor.html', result=result, history=history)
-
 
 @app.route('/cyber/visualization')
 def cyber_visualization():
@@ -236,9 +258,7 @@ def cyber_visualization():
 
 @app.route('/cyber/graph_data')
 def cyber_graph_data():
-    data = load_json_data('data/cyber/cyber_graph_data.json')
-    return data 
-
+    return load_json_data('data/cyber/cyber_graph_data.json')
 
 @app.route('/physical/visualization')
 def physical_visualization():
@@ -246,8 +266,7 @@ def physical_visualization():
 
 @app.route('/physical/graph_data')
 def physical_graph_data():
-    data = load_json_data('data/physical/physical_graph_data.json')
-    return data
+    return load_json_data('data/physical/physical_graph_data.json')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
