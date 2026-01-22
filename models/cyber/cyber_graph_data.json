@@ -3,33 +3,25 @@
         {
             "id": "192.168.3.2",
             "group": "Attacker",
-            "val": 123
-        },
-        {
-            "id": "10.66.189.235",
-            "group": "Target",
-            "val": 105
+            "val": 116
         },
         {
             "id": "192.168.48.0",
             "group": "Attacker",
-            "val": 123
+            "val": 126
         },
         {
             "id": "10.32.130.31",
             "group": "Target",
-            "val": 123
+            "val": 126
+        },
+        {
+            "id": "10.66.189.235",
+            "group": "Attacker",
+            "val": 110
         }
     ],
     "links": [
-        {
-            "source": "192.168.3.2",
-            "target": "10.66.189.235",
-            "color": "#fc8403",
-            "particles": 4,
-            "speed": 0.1252,
-            "info": "Type: 2 | Pkt: 1242.0"
-        },
         {
             "source": "192.168.3.2",
             "target": "192.168.3.2",
@@ -93,22 +85,6 @@
             "particles": 4,
             "speed": 0.07400000000000001,
             "info": "Type: 4 | Pkt: 730.0"
-        },
-        {
-            "source": "192.168.3.2",
-            "target": "192.168.48.0",
-            "color": "#fc8403",
-            "particles": 4,
-            "speed": 0.020200000000000003,
-            "info": "Type: 2 | Pkt: 192.0"
-        },
-        {
-            "source": "192.168.3.2",
-            "target": "10.32.130.31",
-            "color": "#ff0055",
-            "particles": 4,
-            "speed": 0.0674,
-            "info": "Type: 0 | Pkt: 664.0"
         },
         {
             "source": "192.168.3.2",
@@ -223,6 +199,14 @@
             "info": "Type: 1 | Pkt: 940.0"
         },
         {
+            "source": "192.168.48.0",
+            "target": "10.66.189.235",
+            "color": "#d303fc",
+            "particles": 4,
+            "speed": 0.0654,
+            "info": "Type: 1 | Pkt: 644.0"
+        },
+        {
             "source": "10.66.189.235",
             "target": "10.32.130.31",
             "color": "#00ff41",
@@ -279,30 +263,6 @@
             "info": "Type: 3 | Pkt: 405.0"
         },
         {
-            "source": "10.66.189.235",
-            "target": "192.168.48.0",
-            "color": "#00ff41",
-            "particles": 4,
-            "speed": 0.0917,
-            "info": "Type: 3 | Pkt: 907.0"
-        },
-        {
-            "source": "192.168.3.2",
-            "target": "192.168.48.0",
-            "color": "#0388fc",
-            "particles": 4,
-            "speed": 0.1135,
-            "info": "Type: 4 | Pkt: 1125.0"
-        },
-        {
-            "source": "192.168.3.2",
-            "target": "192.168.3.2",
-            "color": "#ff0055",
-            "particles": 4,
-            "speed": 0.049300000000000004,
-            "info": "Type: 0 | Pkt: 483.0"
-        },
-        {
             "source": "10.32.130.31",
             "target": "10.32.130.31",
             "color": "#ff0055",
@@ -357,6 +317,14 @@
             "particles": 4,
             "speed": 0.061000000000000006,
             "info": "Type: 0 | Pkt: 600.0"
+        },
+        {
+            "source": "192.168.48.0",
+            "target": "10.32.130.31",
+            "color": "#d303fc",
+            "particles": 4,
+            "speed": 0.12090000000000001,
+            "info": "Type: 1 | Pkt: 1199.0"
         },
         {
             "source": "192.168.48.0",
@@ -815,22 +783,6 @@
             "info": "Type: 1 | Pkt: 884.0"
         },
         {
-            "source": "10.66.189.235",
-            "target": "10.66.189.235",
-            "color": "#0388fc",
-            "particles": 4,
-            "speed": 0.11760000000000001,
-            "info": "Type: 4 | Pkt: 1166.0"
-        },
-        {
-            "source": "192.168.48.0",
-            "target": "10.32.130.31",
-            "color": "#0388fc",
-            "particles": 4,
-            "speed": 0.14120000000000002,
-            "info": "Type: 4 | Pkt: 1402.0"
-        },
-        {
             "source": "192.168.48.0",
             "target": "10.32.130.31",
             "color": "#ff0055",
@@ -893,6 +845,14 @@
             "particles": 4,
             "speed": 0.1506,
             "info": "Type: 1 | Pkt: 1496.0"
+        },
+        {
+            "source": "10.32.130.31",
+            "target": "192.168.3.2",
+            "color": "#00ff41",
+            "particles": 4,
+            "speed": 0.0717,
+            "info": "Type: 3 | Pkt: 707.0"
         },
         {
             "source": "192.168.3.2",
@@ -1183,6 +1143,14 @@
             "info": "Type: 0 | Pkt: 548.0"
         },
         {
+            "source": "192.168.48.0",
+            "target": "192.168.3.2",
+            "color": "#fc8403",
+            "particles": 4,
+            "speed": 0.07350000000000001,
+            "info": "Type: 2 | Pkt: 725.0"
+        },
+        {
             "source": "10.32.130.31",
             "target": "10.66.189.235",
             "color": "#d303fc",
@@ -1197,6 +1165,14 @@
             "particles": 4,
             "speed": 0.048900000000000006,
             "info": "Type: 4 | Pkt: 479.0"
+        },
+        {
+            "source": "10.66.189.235",
+            "target": "10.32.130.31",
+            "color": "#fc8403",
+            "particles": 4,
+            "speed": 0.1047,
+            "info": "Type: 2 | Pkt: 1037.0"
         },
         {
             "source": "10.66.189.235",
@@ -1221,6 +1197,30 @@
             "particles": 4,
             "speed": 0.1479,
             "info": "Type: 2 | Pkt: 1469.0"
+        },
+        {
+            "source": "192.168.48.0",
+            "target": "10.32.130.31",
+            "color": "#00ff41",
+            "particles": 4,
+            "speed": 0.0485,
+            "info": "Type: 3 | Pkt: 475.0"
+        },
+        {
+            "source": "10.66.189.235",
+            "target": "192.168.3.2",
+            "color": "#d303fc",
+            "particles": 4,
+            "speed": 0.0436,
+            "info": "Type: 1 | Pkt: 426.0"
+        },
+        {
+            "source": "10.66.189.235",
+            "target": "192.168.3.2",
+            "color": "#d303fc",
+            "particles": 4,
+            "speed": 0.021,
+            "info": "Type: 1 | Pkt: 200.0"
         }
     ]
 }
